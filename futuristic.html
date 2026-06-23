@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eternity – Fine Men's Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#07111F;--navy2:#0A192F;--gold:#D4AF37;--gold2:#B8941D;
+  --violet:#112240;--violet-dark:#0F1B2E;--silver:rgba(255,255,255,0.85);--silver-light:#FFFFFF;
+  --rose:#D4AF37;--rose-lt:rgba(212,175,55,0.15);--mauve:rgba(212,175,55,0.8);--white:#FFFFFF;
+  --offwhite:#0A192F;--gray1:#0F1B2E;--gray2:#112240;--gray3:rgba(212,175,55,0.6);
+  --dark:#FFFFFF;--text:rgba(255,255,255,0.8);
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --shadow:0 0 20px rgba(212,175,55,0.15);--shadow2:0 8px 32px rgba(212,175,55,0.2);
+  --radius:12px;--tr:0.25s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--white);background:linear-gradient(135deg,#07111F 0%,#0A192F 35%,#112240 70%,#0F1B2E 100%);overflow-x:hidden;}
+img{max-width:100%;display:block;object-fit:cover;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:linear-gradient(180deg,#07111F,#0A192F);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;box-shadow:0 0 10px rgba(212,175,55,0.3);}
+
+/* TOP BAR */
+.topbar{background:linear-gradient(90deg,#D4AF37 0%,#07111F 100%);color:#fff;text-align:center;padding:8px 16px;font-size:.75rem;letter-spacing:.04em;box-shadow:0 4px 16px rgba(212,175,55,0.2);}
+.topbar span{color:#B8941D;font-weight:700;}
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:linear-gradient(90deg,#D4AF37 0%,#112240 100%);border-bottom:2px solid rgba(212,175,55,0.3);display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:64px;box-shadow:0 8px 20px rgba(212,175,55,0.2);}
+.nav-logo{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--white);letter-spacing:.05em;display:flex;align-items:center;gap:12px;text-shadow:0 0 15px rgba(212,175,55,0.2);}
+.nav-logo .nav-logo-icon{width:56px;height:56px;border-radius:50%;display:block;object-fit:cover;flex-shrink:0;box-shadow:0 0 20px rgba(212,175,55,0.3);transition:transform .18s ease;filter:brightness(0.9) contrast(1.1);}
+.nav-logo .nav-logo-icon{display:block}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--silver);letter-spacing:.02em;transition:all var(--tr);white-space:nowrap;}
+.nav-links a:hover{color:#D4AF37;text-shadow:0 0 10px rgba(212,175,55,0.3);}
+.nav-actions{display:flex;align-items:center;gap:18px;}
+.nav-icon-btn{background:none;border:none;cursor:pointer;color:var(--silver);font-size:1.2rem;display:flex;align-items:center;transition:all var(--tr);}
+.nav-icon-btn:hover{color:#D4AF37;text-shadow:0 0 10px rgba(212,175,55,0.3);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:2px;background:#FFFFFF;border-radius:2px;transition:transform var(--tr),opacity var(--tr);}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu{display:none;position:fixed;inset:0;top:64px;background:rgba(7,17,31,0.98);z-index:199;padding:28px 5%;overflow-y:auto;}
+.mob-menu.open{display:block;}
+.mob-menu a{display:block;padding:14px 0;font-size:1.05rem;font-weight:500;border-bottom:1px solid rgba(212,175,55,0.2);color:#FFFFFF;}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#07111F 0%,#0A192F 35%,#112240 70%,#0F1B2E 100%);}
+.hero-slides{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+.hero-slide{min-width:100%;display:flex;align-items:center;gap:0;min-height:420px;position:relative;overflow:hidden;}
+.hero-slide-bg{position:absolute;inset:0;z-index:0;}
+.hero-slide-bg img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.7) contrast(1.15);}
+.hero-slide-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,17,31,0.85) 0%,rgba(17,34,64,0.7) 100%) !important;}
+.slide-text{position:relative;z-index:2;flex:1;max-width:520px;padding:56px 5% 56px;}
+.slide-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:12px;}
+.slide-title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin-bottom:16px;color:#fff;display:inline-block;transition:transform 220ms ease,letter-spacing 220ms ease;text-shadow:0 0 20px rgba(212,175,55,0.2);}
+.slide-title:hover{transform:scale(1.08);letter-spacing:0.03em;}
+.slide-sub{font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:24px;}
+.slide-cta{display:inline-block;padding:13px 32px;background:linear-gradient(135deg,#D4AF37 0%,#B8941D 100%);color:#07111F;font-size:.78rem;font-weight:600;letter-spacing:.06em;border-radius:4px;transition:all var(--tr);box-shadow:0 0 20px rgba(212,175,55,0.35);font-weight:700;}
+.slide-cta:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(212,175,55,0.5);}
+.hero-prev,.hero-next{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(212,175,55,0.85);border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:#07111F;box-shadow:0 0 15px rgba(212,175,55,0.3);transition:all var(--tr);z-index:10;}
+.hero-prev:hover,.hero-next:hover{background:#D4AF37;box-shadow:0 0 25px rgba(212,175,55,0.4);}
+.hero-prev{left:12px;}
+.hero-next{right:12px;}
+.hero-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
+.hero-dot{width:20px;height:4px;border-radius:2px;background:rgba(212,175,55,.4);cursor:pointer;transition:all var(--tr);}
+.hero-dot.active{background:#D4AF37;width:32px;box-shadow:0 0 12px rgba(212,175,55,0.4);}
+/* SEARCH */
+.search-wrap{padding:20px 5%;display:flex;justify-content:center;}
+.search-bar{display:flex;align-items:center;width:100%;max-width:560px;border:1.5px solid rgba(212,175,55,0.3);border-radius:8px;padding:12px 18px;gap:10px;background:rgba(10,25,47,0.7);box-shadow:0 0 20px rgba(212,175,55,0.15);cursor:text;transition:all var(--tr);backdrop-filter:blur(10px);}
+.search-bar:hover{border-color:#D4AF37;box-shadow:0 0 30px rgba(212,175,55,0.25);}
+.search-bar span{font-size:.9rem;color:rgba(212,175,55,0.7);}
+.search-bar span b{color:#D4AF37;font-weight:600;}
+.search-icon-svg{width:18px;height:18px;stroke:rgba(212,175,55,0.7);fill:none;flex-shrink:0;}
+section{padding:44px 5%;}
+.section-title{text-align:center;font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.9rem);color:#D4AF37;font-weight:400;margin-bottom:28px;position:relative;transition:transform 220ms ease,letter-spacing 220ms ease,text-shadow 220ms ease;display:inline-block;text-shadow:0 0 15px rgba(212,175,55,0.2);}
+.section-title:hover{transform:scale(1.08);letter-spacing:0.08em;text-shadow:0 0 25px rgba(212,175,55,0.3);}
+.section-title::after{content:'';display:block;width:62px;height:4px;margin:16px auto 0;border-radius:999px;background:linear-gradient(135deg,#D4AF37 0%,#E5C158 55%,#B8941D 100%);box-shadow:0 0 20px rgba(212,175,55,0.3), inset 0 0 10px rgba(212,175,55,0.2);}
+.section-title-dark{text-align:center;font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);color:#D4AF37;font-weight:700;margin-bottom:6px;transition:transform 220ms ease,letter-spacing 220ms ease;display:inline-block;text-shadow:0 0 15px rgba(212,175,55,0.2);}
+.section-title-dark:hover{transform:scale(1.06);letter-spacing:0.05em;}
+.section-sub{text-align:center;font-size:.85rem;color:rgba(212,175,55,0.8);margin-bottom:28px;}
+.cat-section{position:relative;background:linear-gradient(180deg, rgba(7,17,31,0.95) 0%, rgba(10,25,47,0.92) 100%);padding-top:52px;border-top:1px solid rgba(212,175,55,0.15);border-bottom:1px solid rgba(212,175,55,0.15);}
+.cat-section::before{content:'';position:absolute;top:24px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,rgba(212,175,55,0.15),rgba(212,175,55,0.3),rgba(212,175,55,0.15));z-index:0;}
+.cat-scroll{display:flex;gap:18px;overflow-x:auto;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:x mandatory;position:relative;z-index:1;}
+.cat-scroll::-webkit-scrollbar{display:none;}
+.cat-card{flex:0 0 220px;background:rgba(10,25,47,0.6);backdrop-filter:blur(16px);border-radius:30px;box-shadow:0 8px 32px rgba(212,175,55,0.15), inset 0 1px 1px rgba(212,175,55,0.1);overflow:visible;cursor:pointer;transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);border:1px solid rgba(212,175,55,0.25);scroll-snap-align:start;position:relative;}
+.cat-card::before{content:'';position:absolute;top:-44px;left:50%;transform:translateX(-50%) rotate(45deg);width:24px;height:24px;background:rgba(10,25,47,0.9);border:3px solid rgba(212,175,55,0.3);border-radius:8px 8px 4px 4px;box-shadow:0 0 15px rgba(212,175,55,0.2);animation:clip-bounce 3.5s ease-in-out infinite alternate;}
+.cat-card:hover{box-shadow:0 20px 50px rgba(212,175,55,0.3), inset 0 1px 1px rgba(212,175,55,0.15);transform:translateY(-10px);border-color:rgba(212,175,55,0.4);}
+.cat-img{width:100%;height:170px;overflow:hidden;position:relative;border-bottom:1px solid rgba(212,175,55,0.2);}
+.cat-img::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%);pointer-events:none;}
+.cat-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--tr),filter var(--tr);filter:brightness(0.85) contrast(1.1);}
+.cat-card:hover .cat-img img{transform:scale(1.08);filter:brightness(0.95) contrast(1.15);}
+.cat-label{font-size:.95rem;font-weight:700;color:#D4AF37;text-align:center;padding:18px 14px 20px;letter-spacing:.03em;background:rgba(7,17,31,0.5);border-top:1px solid rgba(212,175,55,0.2);text-shadow:0 0 8px rgba(212,175,55,0.2);}
+@keyframes rope-swing {
+  0%{transform:translateX(-50%) rotate(0deg);}
+  50%{transform:translateX(-50%) rotate(4deg);}
+  100%{transform:translateX(-50%) rotate(-4deg);}
+}
+@keyframes clip-bounce {
+  0%{transform:translateX(-50%) rotate(45deg) translateY(0);}
+  50%{transform:translateX(-50%) rotate(45deg) translateY(-3px);}
+  100%{transform:translateX(-50%) rotate(45deg) translateY(0);}
+}
+
+/* COLLECTIONS */
+.collections-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.coll-card{border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(212,175,55,0.15), inset 0 1px 1px rgba(212,175,55,0.1);cursor:pointer;transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);background:rgba(10,25,47,0.6);backdrop-filter:blur(16px);border:1.5px solid rgba(212,175,55,0.25);}
+.coll-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(212,175,55,0.3);border-color:rgba(212,175,55,0.4);}
+.coll-img{width:100%;height:200px;overflow:hidden;position:relative;}
+.coll-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--tr);filter:brightness(0.85) contrast(1.1);}
+.coll-card:hover .coll-img img{transform:scale(1.06);filter:brightness(0.95) contrast(1.15);}
+.coll-body{padding:18px 16px 20px;}
+.coll-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#D4AF37;margin-bottom:4px;text-shadow:0 0 8px rgba(212,175,55,0.2);}
+.coll-tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,175,55,0.8);font-weight:600;}
+.coll-desc{font-size:.8rem;color:rgba(255,255,255,0.75);margin-top:6px;line-height:1.5;}
+.cat-bg{background:linear-gradient(180deg, rgba(7,17,31,0.95) 0%, rgba(10,25,47,0.92) 100%);border-top:1px solid rgba(212,175,55,0.15);border-bottom:1px solid rgba(212,175,55,0.15);}
+.filter-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;}
+.filt-btn{padding:8px 22px;border:1.5px solid rgba(212,175,55,0.3);border-radius:20px;font-size:.78rem;font-weight:500;background:transparent;cursor:pointer;color:#D4AF37;transition:all var(--tr);}
+.filt-btn:hover,.filt-btn.active{border-color:#D4AF37;background:#D4AF37;color:#07111F;font-weight:700;box-shadow:0 0 20px rgba(212,175,55,0.35);}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;}
+.prod-card{border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(212,175,55,0.15), inset 0 1px 1px rgba(212,175,55,0.1);background:rgba(10,25,47,0.6);backdrop-filter:blur(16px);border:1.5px solid rgba(212,175,55,0.25);cursor:pointer;transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);}
+.prod-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(212,175,55,0.3);border-color:rgba(212,175,55,0.4);}
+.prod-img{width:100%;height:220px;position:relative;overflow:hidden;background:rgba(7,17,31,0.8);}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--tr);filter:brightness(0.85) contrast(1.1);}
+.prod-card:hover .prod-img img{transform:scale(1.07);filter:brightness(0.95) contrast(1.15);}
+.prod-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,17,31,0.9) 0%,rgba(17,34,64,0.85) 100%);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--tr);}
+.prod-card:hover .prod-overlay{opacity:1;}
+.prod-overlay-btn{padding:10px 24px;background:linear-gradient(135deg,#D4AF37 0%,#B8941D 100%);color:#07111F;font-size:.72rem;font-weight:700;letter-spacing:.06em;border-radius:4px;border:none;cursor:pointer;box-shadow:0 0 20px rgba(212,175,55,0.3);font-weight:700;}
+.prod-info{padding:14px 14px 16px;}
+.prod-badge{display:inline-block;padding:2px 10px;margin-bottom:7px;background:rgba(212,175,55,0.15);color:#D4AF37;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:10px;border:1px solid rgba(212,175,55,0.3);}
+.prod-name{font-size:.92rem;font-weight:700;color:#D4AF37;margin-bottom:4px;line-height:1.3;text-shadow:0 0 8px rgba(212,175,55,0.15);}
+.prod-desc{font-size:.75rem;color:rgba(255,255,255,0.75);margin-bottom:10px;line-height:1.5;}
+.prod-price{font-size:1rem;font-weight:700;color:#D4AF37;text-shadow:0 0 8px rgba(212,175,55,0.15);}
+.prod-price s{font-size:.78rem;color:rgba(212,175,55,0.6);font-weight:400;margin-right:4px;}
+.prod-cta{display:block;width:100%;margin-top:10px;padding:9px;text-align:center;background:linear-gradient(135deg,#D4AF37 0%,#B8941D 100%);color:#07111F;font-size:.72rem;font-weight:600;letter-spacing:.06em;border-radius:4px;border:none;cursor:pointer;transition:all var(--tr);box-shadow:0 0 15px rgba(212,175,55,0.3);font-weight:700;}
+.prod-cta:hover{transform:translateY(-2px);box-shadow:0 0 25px rgba(212,175,55,0.4);}
+/* CUSTOMIZE BANNER */
+.custom-banner{background:linear-gradient(120deg,#D4AF37 0%,#07111F 50%,#B8941D 100%);color:#FFFFFF;text-align:center;padding:56px 5%;box-shadow:0 8px 30px rgba(212,175,55,0.3);border-top:1px solid rgba(212,175,55,0.3);border-bottom:1px solid rgba(212,175,55,0.3);}
+.custom-banner h2{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:12px;color:#07111F;text-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.custom-banner p{font-size:.9rem;color:rgba(255,255,255,.85);max-width:580px;margin:0 auto 32px;line-height:1.8;}
+.custom-steps{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin-bottom:32px;}
+.cust-step{padding:16px 24px;border-right:1px solid rgba(255,255,255,.2);text-align:center;color:#FFFFFF;}
+.cust-step:last-child{border-right:none;}
+.cust-step-img{width:52px;height:52px;border-radius:50%;overflow:hidden;margin:0 auto 8px;border:2px solid rgba(255,255,255,.4);}
+.cust-step-img img{width:100%;height:100%;object-fit:cover;}
+.cust-step-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.9);}
+.custom-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-white{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:#FFFFFF;color:#07111F;font-size:.78rem;font-weight:700;border-radius:4px;transition:all var(--tr);border:2px solid #D4AF37;box-shadow:0 0 15px rgba(212,175,55,0.2);}
+.btn-white:hover{background:#D4AF37;color:#07111F;transform:translateY(-2px);box-shadow:0 0 25px rgba(212,175,55,0.3);}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:linear-gradient(135deg,#D4AF37 0%,#B8941D 100%);color:#07111F;font-size:.78rem;font-weight:700;border-radius:4px;transition:all var(--tr);box-shadow:0 0 20px rgba(212,175,55,0.35);border:1px solid #D4AF37;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(212,175,55,0.5);background:linear-gradient(135deg,#E5C158,#D4AF37);}
+/* MATERIALS */
+.material-section{background:#f7f6ff;}
+.material-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:minmax(200px,auto) minmax(220px,auto) minmax(150px,auto);grid-template-areas:"wide right" "tall right" "bottom bottom";gap:16px;margin-top:18px;}
+.material-grid .mat-card{background:#fff;border-radius:20px;box-shadow:0 18px 40px rgba(0,0,0,0.06);overflow:hidden;cursor:pointer;transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);border:1px solid rgba(191,194,204,0.18);display:flex;flex-direction:column;}
+.material-grid .mat-card:hover{transform:translateY(-3px);box-shadow:0 22px 52px rgba(0,0,0,0.1);border-color:rgba(124,58,237,0.14);}
+.material-grid .mat-img{width:100%;height:100%;overflow:hidden;background:#f2f0ff;}
+.material-grid .mat-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--tr);}
+.material-grid .mat-card:hover .mat-img img{transform:scale(1.04);}
+.material-grid .mat-name{font-size:.95rem;font-weight:700;color:var(--dark);padding:14px 14px 18px;}
+.material-grid .mat-card:nth-child(1){grid-area:wide;}
+.material-grid .mat-card:nth-child(2){grid-area:right;}
+.material-grid .mat-card:nth-child(3){grid-area:tall;}
+.material-grid .mat-card:nth-child(4){grid-area:bottom;}
+@media(max-width:1100px){
+  .material-grid{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:none;}
+  .material-grid .mat-card{min-height:auto;}
+}
+@media(max-width:600px){
+  .material-grid{gap:12px;}
+}
+
+@keyframes float-y {
+  0%{transform:translateY(0);} 
+  100%{transform:translateY(-12px);}
+}
+
+/* PROCESS */
+.process-section{background:#fff;}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:32px;}
+.proc-card{background:linear-gradient(135deg,rgba(124,58,237,0.04) 0%,rgba(192,192,192,0.05) 100%);border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--silver);transition:border-color var(--tr),transform var(--tr);} 
+.proc-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+.proc-img{width:100%;height:140px;overflow:hidden;}
+.proc-img img{width:100%;height:100%;object-fit:cover;}
+.proc-body{padding:20px 18px 22px;text-align:center;}
+.proc-num{width:44px;height:44px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.9rem;margin:0 auto 12px;box-shadow:0 4px 12px rgba(124,58,237,0.36);} 
+.proc-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:8px;}
+.proc-desc{font-size:.78rem;color:var(--text);line-height:1.6;}
+
+/* PROMISE */
+.promise-section{background:linear-gradient(180deg,#fff 0%,rgba(124,58,237,0.03) 100%);} 
+.promise-box{border:2px solid var(--gold);border-radius:16px;padding:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:#fff;max-width:700px;margin:24px auto 0;box-shadow:0 8px 25px rgba(124,58,237,0.15);} 
+.prom-item{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;}
+.prom-circle{width:66px;height:66px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(124,58,237,0.3);border:2px solid var(--silver);} 
+.prom-circle img{width:100%;height:100%;object-fit:cover;}
+.prom-label{font-size:.72rem;font-weight:600;color:var(--dark);line-height:1.4;}
+
+/* TESTIMONIALS */
+.testi-section{background:linear-gradient(180deg,#fff 0%,rgba(124,58,237,0.04) 100%);} 
+.testi-title{font-family:var(--serif);text-align:center;font-size:1.5rem;color:var(--gold);font-weight:700;} 
+.testi-hashtag{text-align:center;color:var(--mauve);font-size:.85rem;margin-bottom:28px;}
+.testi-grid{display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.testi-grid::-webkit-scrollbar{display:none;}
+.testi-card{flex:0 0 280px;background:var(--rose-lt);border-radius:10px;padding:20px;position:relative;}
+.testi-img{width:100%;height:160px;background:var(--gray2);border-radius:6px;overflow:hidden;margin-bottom:14px;}
+.testi-img img{width:100%;height:100%;object-fit:cover;}
+.testi-name{font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:6px;}
+.testi-text{font-size:.78rem;color:var(--text);line-height:1.6;}
+.testi-stars{color:var(--gold);font-size:.85rem;margin-bottom:6px;}
+
+/* ABOUT */
+.about-section{background:linear-gradient(180deg,var(--offwhite) 0%,rgba(124,58,237,0.05) 100%);} 
+.about-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;} 
+.about-img-wrap{background:#fff;border-radius:16px;box-shadow:var(--shadow2);overflow:hidden;border:2px solid var(--gold);} 
+.about-photo{width:100%;height:340px;overflow:hidden;} 
+.about-photo img{width:100%;height:100%;object-fit:cover;} 
+.about-info{padding:24px;} 
+.about-name{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--gold);} 
+.about-role{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mauve);font-weight:600;margin-top:4px;} 
+.about-edu{font-size:.75rem;color:var(--text);background:var(--gray1);padding:5px 12px;border-radius:20px;display:inline-block;margin-top:8px;} 
+.about-text h2{font-family:var(--serif);font-size:1.6rem;color:var(--gold);margin-bottom:14px;} 
+.about-text p{font-size:.86rem;color:var(--text);line-height:1.8;margin-bottom:12px;} 
+.about-stats{display:flex;gap:20px;margin-top:20px;flex-wrap:wrap;} 
+.about-stat{background:linear-gradient(135deg,rgba(124,58,237,0.08) 0%,rgba(192,192,192,0.1) 100%);border-radius:10px;padding:14px 20px;box-shadow:var(--shadow);text-align:center;flex:1;min-width:80px;border:1px solid var(--silver);} 
+.about-stat-num{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--gold);} 
+.about-stat-lbl{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray3);}
+
+/* INSTAGRAM GRID */
+.insta-section{background:linear-gradient(180deg,#fff 0%,rgba(124,58,237,0.03) 100%);} 
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px;}
+.insta-cell{aspect-ratio:1;overflow:hidden;border-radius:4px;cursor:pointer;position:relative;}
+.insta-cell img{width:100%;height:100%;object-fit:cover;transition:transform var(--tr);}
+.insta-cell:hover img{transform:scale(1.05);}
+.insta-cell.large{grid-column:span 2;grid-row:span 2;}
+.insta-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,.75) 0%,rgba(15,32,68,.8) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;opacity:0;transition:opacity var(--tr);} 
+.insta-cell:hover .insta-overlay{opacity:1;}
+.insta-overlay span{color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.1em;}
+.shop-now-tag{position:absolute;bottom:10px;left:10px;background:#fff;color:var(--violet);font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:2px;text-transform:uppercase;}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(180deg,var(--offwhite) 0%,rgba(124,58,237,0.06) 100%);} 
+.contact-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.contact-info h3{font-family:var(--serif);font-size:1.4rem;color:var(--gold);margin-bottom:14px;}
+.contact-info p{font-size:.85rem;color:var(--text);line-height:1.8;margin-bottom:20px;}
+.contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
+.ci-icon{width:38px;height:38px;flex-shrink:0;background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 8px rgba(124,58,237,0.28);} 
+.ci-icon img{width:20px;height:20px;object-fit:contain;filter:invert(1);}
+.ci-label{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mauve);font-weight:700;margin-bottom:2px;}
+.ci-val{font-size:.84rem;color:var(--dark);}
+.contact-form{display:flex;flex-direction:column;gap:14px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fg label{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--violet);margin-bottom:5px;display:block;}
+.fg input,.fg select,.fg textarea{width:100%;background:#fff;border:1.5px solid var(--silver);border-radius:6px;padding:11px 14px;font-family:var(--sans);font-size:.85rem;color:var(--dark);outline:none;transition:border-color var(--tr),box-shadow var(--tr);appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(124,58,237,0.08);} 
+.fg textarea{resize:vertical;min-height:100px;}
+.submit-btn{padding:13px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.08em;border:none;border-radius:6px;cursor:pointer;transition:all var(--tr);box-shadow:0 4px 15px rgba(124,58,237,0.36);} 
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,0.56);} 
+
+/* SOCIAL BAR */
+.social-bar{background:rgba(7,17,31,0.95);border-top:2px solid rgba(212,175,55,0.2);border-bottom:2px solid rgba(212,175,55,0.2);padding:24px 5%;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
+.social-lbl{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(212,175,55,0.8);font-weight:600;}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1.5px solid rgba(212,175,55,0.4);border-radius:6px;font-size:.78rem;font-weight:600;color:#D4AF37;transition:all var(--tr);background:transparent;box-shadow:0 0 10px rgba(212,175,55,0.15);}
+.soc-btn svg{width:18px;height:18px;fill:currentColor;}
+.soc-btn.wa:hover{border-color:#25D366;color:#25D366;background:rgba(37,211,102,0.1);box-shadow:0 0 15px rgba(37,211,102,0.25);}
+.soc-btn.ig:hover{border-color:#E1306C;color:#E1306C;background:rgba(225,48,108,0.1);box-shadow:0 0 15px rgba(225,48,108,0.25);}
+.soc-btn.fb:hover{border-color:#1877F2;color:#1877F2;background:rgba(24,119,242,0.1);box-shadow:0 0 15px rgba(24,119,242,0.25);}
+
+/* FOOTER */
+footer{background:linear-gradient(135deg,#07111F 0%,#0A192F 50%,#112240 100%);color:#fff;padding:36px 5% 0;border-top:1px solid rgba(212,175,55,0.2);box-shadow:0 -8px 32px rgba(212,175,55,0.1);}
+.footer-top{display:flex;flex-wrap:wrap;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(212,175,55,0.15);}
+.footer-brand{flex:2;min-width:220px;}
+.footer-brand .nav-logo{color:#D4AF37;margin-bottom:12px;text-shadow:0 0 12px rgba(212,175,55,0.2);}
+.footer-brand .nav-logo-icon{background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);box-shadow:0 0 12px rgba(212,175,55,0.15);}
+.footer-brand p{font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.8;max-width:280px;}
+.footer-col{flex:1;min-width:140px;}
+.footer-col h4{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(212,175,55,0.9);margin-bottom:14px;}
+.footer-col ul li a{font-size:.82rem;color:rgba(255,255,255,.8);display:block;padding:5px 0;transition:all var(--tr);}
+.footer-col ul li a:hover{color:#D4AF37;text-shadow:0 0 8px rgba(212,175,55,0.2);}
+.footer-acc-btn{display:none;width:100%;background:none;border:none;border-top:1px solid rgba(212,175,55,0.15);padding:14px 0;color:rgba(255,255,255,.85);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:left;cursor:pointer;justify-content:space-between;align-items:center;}
+.footer-acc-content{display:block;}
+.footer-contact-btns{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;}
+.footer-contact-btn{display:flex;align-items:center;gap:8px;padding:10px 22px;border:1.5px solid rgba(212,175,55,0.4);border-radius:4px;color:#D4AF37;font-size:.78rem;font-weight:600;transition:all var(--tr);cursor:pointer;background:transparent;box-shadow:0 0 10px rgba(212,175,55,0.15);}
+.footer-contact-btn:hover{border-color:#D4AF37;background:rgba(212,175,55,0.15);box-shadow:0 0 15px rgba(212,175,55,0.25);}
+.follow-section{margin-top:20px;}
+.follow-section h4{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:12px;}
+.social-icons{display:flex;gap:12px;}
+.soc-circle{width:40px;height:40px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:background var(--tr);}
+.soc-circle:hover{background:rgba(255,255,255,.25);}
+.soc-circle svg{width:18px;height:18px;fill:#fff;}
+.footer-bottom{padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid rgba(255,255,255,.1);margin-top:20px;}
+.footer-bottom p{font-size:.72rem;color:rgba(255,255,255,.45);}
+
+/* FLOATING WA */
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:300;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.45);transition:transform var(--tr);}
+.float-wa:hover{transform:scale(1.1);}
+.float-wa svg{width:26px;height:26px;fill:#fff;}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px;}
+.modal-bg.open{display:flex;}
+.modal-box{background:#fff;border-radius:16px;max-width:480px;width:100%;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(124,58,237,0.28);border:1.5px solid var(--silver);} 
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(0,0,0,.3);border:none;font-size:1rem;cursor:pointer;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;}
+.modal-close:hover{background:rgba(0,0,0,.5);}
+.modal-img{width:100%;height:240px;overflow:hidden;}
+.modal-img img{width:100%;height:100%;object-fit:cover;}
+.modal-body{padding:24px 28px 28px;}
+.modal-badge{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mauve);font-weight:700;margin-bottom:6px;}
+.modal-name{font-family:var(--serif);font-size:1.5rem;color:var(--navy);margin-bottom:8px;}
+.modal-desc{font-size:.84rem;color:var(--text);line-height:1.7;margin-bottom:14px;}
+.modal-price{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:22px;}
+.modal-btns{display:flex;gap:10px;}
+.modal-btns a{flex:1;text-align:center;padding:12px;border-radius:6px;font-size:.78rem;font-weight:700;}
+.modal-btn-primary{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,0.3);} 
+.modal-btn-primary:hover{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 100%);transform:translateY(-1px);}
+.modal-btn-secondary{border:1.5px solid var(--gold);color:var(--gold);}
+.modal-btn-secondary:hover{background:var(--gold);color:#fff;}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .about-inner{grid-template-columns:1fr;}
+  .contact-inner{grid-template-columns:1fr;}
+  .footer-top{flex-direction:column;}
+  .footer-col{display:none;}
+  .footer-acc-btn{display:flex;}
+  .footer-acc-content{display:none;}
+  .footer-acc-content.open{display:block;}
+  .promise-box{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:600px){
+  .hero-slide{flex-direction:column;}
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .collections-grid{grid-template-columns:1fr 1fr;}
+  .material-grid{grid-template-columns:repeat(2,1fr);}
+  .process-steps{grid-template-columns:1fr;}
+  .promise-box{grid-template-columns:repeat(3,1fr);gap:14px;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-contact-btns{flex-direction:column;}
+}
+@media(max-width:400px){
+  .promise-box{grid-template-columns:repeat(3,1fr);}
+  .prom-circle{width:52px;height:52px;}
+  .prom-label{font-size:.65rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Eternity%2C%20I%20want%20to%20customize%20a%20jewellery%20piece" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img"><img id="mImg" src="" alt="Product"/></div>
+    <div class="modal-body">
+      <span class="modal-badge" id="mBadge"></span>
+      <div class="modal-name" id="mName"></div>
+      <div class="modal-desc" id="mDesc"></div>
+      <div class="modal-price" id="mPrice"></div>
+      <div class="modal-btns">
+        <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20customize%20this%20design" target="_blank" class="modal-btn-primary">Customize Now ↗</a>
+        <a href="#contact" onclick="closeModal()" class="modal-btn-secondary">Enquire</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#catalogue" onclick="closeMob()">Catalogue</a>
+  <a href="#process" onclick="closeMob()">How It Works</a>
+  <a href="#customize" onclick="closeMob()">Customize</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">✦ <span>100% Custom Designs</span> · CAD Preview Before You Pay · Free Delivery ✦</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">
+    <img src="WhatsApp Image 2026-06-15 at 10.19.27 PM.jpeg" class="nav-logo-icon" alt="Eternity logo">
+    ETERNITY
+  </a>
+  <ul class="nav-links">
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#customize">Customize</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-icon-btn" onclick="document.querySelector('.search-wrap').scrollIntoView({behavior:'smooth'})">
+      <svg class="search-icon-svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <div class="hero-slides" id="heroSlides">
+    <!-- Slide 1 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1400&q=80&fit=crop" alt="Men's gold ring" loading="eager"/>
+      </div>
+      <div class="hero-slide-overlay" style="background:linear-gradient(90deg,rgba(10,20,50,0.82) 0%,rgba(10,20,50,0.3) 100%);"></div>
+      <div class="slide-text">
+        <div class="slide-eyebrow">Men's Fine Jewellery · Est. 2023</div>
+        <h1 class="slide-title">Crafted for the<br>Modern King</h1>
+        <p class="slide-sub">Bespoke rings & chains designed in CAD, approved by you, then built by hand. 100% custom. 100% yours.</p>
+        <a href="#catalogue" class="slide-cta">Explore Collection</a>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1400&q=80&fit=crop" alt="CAD jewellery design" loading="lazy"/>
+      </div>
+      <div class="hero-slide-overlay" style="background:linear-gradient(90deg,rgba(5,10,25,0.88) 0%,rgba(5,10,25,0.4) 100%);"></div>
+      <div class="slide-text">
+        <div class="slide-eyebrow">Customization First</div>
+        <h1 class="slide-title">Design First.<br>Pay Later.</h1>
+        <p class="slide-sub">We show you the CAD render before you commit. If you love it, we build it. No surprises.</p>
+        <a href="#customize" class="slide-cta">Start Customizing</a>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg">
+        <img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=1400&q=80&fit=crop" alt="Gold chain jewellery" loading="lazy"/>
+      </div>
+      <div class="hero-slide-overlay" style="background:linear-gradient(90deg,rgba(20,14,5,0.85) 0%,rgba(20,14,5,0.35) 100%);"></div>
+      <div class="slide-text">
+        <div class="slide-eyebrow">Gold · Silver · Diamond</div>
+        <h1 class="slide-title">Raw Reverie<br><em style="color:var(--gold2)">in Gold</em></h1>
+        <p class="slide-sub">Solid gold chains and statement rings — every link, every edge, every detail exactly as you imagined.</p>
+        <a href="#catalogue" class="slide-cta">Shop Chains</a>
+      </div>
+    </div>
+  </div>
+  <button class="hero-prev" onclick="changeSlide(-1)">‹</button>
+  <button class="hero-next" onclick="changeSlide(1)">›</button>
+  <div class="hero-dots" id="heroDots"></div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <div class="search-bar" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    <svg class="search-icon-svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Search by <b>Style, Metal or Occasion</b></span>
+  </div>
+</div>
+
+<!-- CATEGORY SCROLL -->
+<section class="cat-section">
+  <div class="section-title fade-in">Browse by Category</div>
+  <div class="cat-scroll">
+    <div class="cat-card fade-in" onclick="filterAndGo('ring')">
+      <div class="cat-img"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300&q=75&fit=crop" alt="Rings" loading="lazy"/></div>
+      <div class="cat-label">Rings</div>
+    </div>
+    <div class="cat-card fade-in" onclick="filterAndGo('chain')">
+      <div class="cat-img"><img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=300&q=75&fit=crop" alt="Chains" loading="lazy"/></div>
+      <div class="cat-label">Chains</div>
+    </div>
+    <div class="cat-card fade-in" onclick="filterAndGo('bracelet')">
+      <div class="cat-img"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=300&q=75&fit=crop" alt="Bracelets" loading="lazy"/></div>
+      <div class="cat-label">Bracelets</div>
+    </div>
+    <div class="cat-card fade-in" onclick="filterAndGo('all')">
+      <div class="cat-img"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=300&q=75&fit=crop" alt="Gold" loading="lazy"/></div>
+      <div class="cat-label">Gold</div>
+    </div>
+    <!-- Removed Diamond and Black categories as requested -->
+    <div class="cat-card fade-in" onclick="filterAndGo('all')">
+      <div class="cat-img"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=300&q=75&fit=crop" alt="Custom" loading="lazy"/></div>
+      <div class="cat-label">Custom</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section>
+  <div class="section-title fade-in">Browse Latest Collections</div>
+  <div class="collections-grid">
+    <div class="coll-card fade-in">
+      <div class="coll-img">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80&fit=crop" alt="Sovereign Rings" loading="lazy"/>
+      </div>
+      <div class="coll-body">
+        <div class="coll-tag">Signature Line</div>
+        <div class="coll-name">Sovereign Rings</div>
+        <div class="coll-desc">Bold gold signet and statement rings for men who own every room.</div>
+      </div>
+    </div>
+    <div class="coll-card fade-in">
+      <div class="coll-img">
+        <img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=600&q=80&fit=crop" alt="Gold Chains" loading="lazy"/>
+      </div>
+      <div class="coll-body">
+        <div class="coll-tag">Raw Reverie</div>
+        <div class="coll-name">Gold Chains</div>
+        <div class="coll-desc">Cuban, Figaro, Rope — heavy gold chains fully customised in weight and length.</div>
+      </div>
+    </div>
+    <div class="coll-card fade-in">
+      <div class="coll-img">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80&fit=crop" alt="Power Bracelets" loading="lazy"/>
+      </div>
+      <div class="coll-body">
+        <div class="coll-tag">Warrior Series</div>
+        <div class="coll-name">Power Bracelets</div>
+        <div class="coll-desc">Cuffs, braids, and links — masculine jewellery for the wrist.</div>
+      </div>
+    </div>
+    <div class="coll-card fade-in">
+      <div class="coll-img">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80&fit=crop" alt="Blackout Edition" loading="lazy"/>
+      </div>
+      <div class="coll-body">
+        <div class="coll-tag">Exclusive</div>
+        <div class="coll-name">Blackout Edition</div>
+        <div class="coll-desc">Black rhodium, dark onyx — the anti-bling collection that still speaks volumes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue" class="cat-bg">
+  <div class="section-title-dark fade-in">Our Catalogue</div>
+  <div class="section-sub fade-in">10 signature pieces — all fully customisable</div>
+  <div class="filter-row fade-in">
+    <button class="filt-btn active" onclick="filterProds('all',this)">All</button>
+    <button class="filt-btn" onclick="filterProds('ring',this)">Rings</button>
+    <button class="filt-btn" onclick="filterProds('chain',this)">Chains</button>
+    <button class="filt-btn" onclick="filterProds('bracelet',this)">Bracelets</button>
+  </div>
+  <div class="products-grid" id="prodGrid"></div>
+</section>
+
+<!-- CUSTOMIZE CTA -->
+<div id="customize" class="custom-banner">
+  <h2>Nothing Off the Shelf.<br>Everything for You.</h2>
+  <p>Eternity specialises in 100% custom men's jewellery. Share your idea, get a CAD preview — then we build it only after you approve. We can do <em>anything</em>.</p>
+  <div class="custom-steps">
+    <div class="cust-step">
+      <div class="cust-step-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=75&fit=crop" alt="Consult"/></div>
+      <div class="cust-step-label">Consult</div>
+    </div>
+    <div class="cust-step">
+      <div class="cust-step-img"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=100&q=75&fit=crop" alt="CAD Preview"/></div>
+      <div class="cust-step-label">CAD Preview</div>
+    </div>
+    <div class="cust-step">
+      <div class="cust-step-img"><img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=100&q=75&fit=crop" alt="Approve"/></div>
+      <div class="cust-step-label">Approve</div>
+    </div>
+    <div class="cust-step">
+      <div class="cust-step-img"><img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&q=75&fit=crop" alt="Receive"/></div>
+      <div class="cust-step-label">Receive</div>
+    </div>
+  </div>
+  <div class="custom-btns">
+    <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20start%20a%20custom%20design" target="_blank" class="btn-white">Start on WhatsApp</a>
+    <a href="#contact" class="btn-gold">Send Enquiry</a>
+  </div>
+</div>
+
+<!-- MATERIALS -->
+<section class="material-section">
+  <div class="section-title fade-in">Alchemy of Materials</div>
+  <div class="material-grid">
+    <div class="mat-card fade-in">
+      <div class="mat-img"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=300&q=75&fit=crop" alt="Yellow Gold" loading="lazy"/></div>
+      <div class="mat-name">Yellow Gold</div>
+    </div>
+    <div class="mat-card fade-in">
+      <div class="mat-img"><img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=300&q=75&fit=crop" alt="Sterling Silver" loading="lazy"/></div>
+      <div class="mat-name">Sterling Silver</div>
+    </div>
+    <div class="mat-card fade-in">
+      <div class="mat-img"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=300&q=75&fit=crop" alt="Diamond" loading="lazy"/></div>
+      <div class="mat-name">Diamond</div>
+    </div>
+    <!-- Black Rhodium and Gemstone cards removed -->
+    <div class="mat-card fade-in">
+      <div class="mat-img"><img src="https://images.unsplash.com/photo-1603255182586-01b9e7f3c8a7?w=300&q=75&fit=crop" alt="Rose Gold" loading="lazy"/></div>
+      <div class="mat-name">Rose Gold</div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-section">
+  <div class="section-title-dark fade-in">How It Works</div>
+  <div class="section-sub fade-in">From your idea to your hand in 4 steps</div>
+  <div class="process-steps">
+    <div class="proc-card fade-in">
+      <div class="proc-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=75&fit=crop" alt="Share Your Vision" loading="lazy"/></div>
+      <div class="proc-body">
+        <div class="proc-num">1</div>
+        <div class="proc-title">Share Your Vision</div>
+        <p class="proc-desc">Tell us what you have in mind — style, metal, stones, occasion. We listen carefully and ask the right questions.</p>
+      </div>
+    </div>
+    <div class="proc-card fade-in">
+      <div class="proc-img"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500&q=75&fit=crop" alt="CAD Design" loading="lazy"/></div>
+      <div class="proc-body">
+        <div class="proc-num">2</div>
+        <div class="proc-title">CAD Design Preview</div>
+        <p class="proc-desc">We create a detailed 3D CAD render of your piece and send it to you. See exactly what you're getting before we cast anything.</p>
+      </div>
+    </div>
+    <div class="proc-card fade-in">
+      <div class="proc-img"><img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=75&fit=crop" alt="Your Approval" loading="lazy"/></div>
+      <div class="proc-body">
+        <div class="proc-num">3</div>
+        <div class="proc-title">Your Approval</div>
+        <p class="proc-desc">Review the design. Request changes. We refine until you're 100% happy. Production only starts after your green light.</p>
+      </div>
+    </div>
+    <div class="proc-card fade-in">
+      <div class="proc-img"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=75&fit=crop" alt="Crafted and Delivered" loading="lazy"/></div>
+      <div class="proc-body">
+        <div class="proc-num">4</div>
+        <div class="proc-title">Crafted & Delivered</div>
+        <p class="proc-desc">Our craftsmen bring your approved design to life. Your one-of-a-kind piece arrives safely at your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise-section">
+  <div class="section-title-dark fade-in">Eternity</div>
+  <div class="section-sub fade-in" style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:4px;">Promise</div>
+  <div class="promise-box fade-in">
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=120&q=70&fit=crop" alt="CAD Preview"/></div>
+      <div class="prom-label">CAD Preview Before Production</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=120&q=70&fit=crop" alt="100% Custom"/></div>
+      <div class="prom-label">100% Custom Designs</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=120&q=70&fit=crop" alt="Certified"/></div>
+      <div class="prom-label">Certified Materials</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=120&q=70&fit=crop" alt="Free Delivery"/></div>
+      <div class="prom-label">Free Delivery</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=120&q=70&fit=crop" alt="Revisions"/></div>
+      <div class="prom-label">Free Design Revisions</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=120&q=70&fit=crop" alt="Men Only"/></div>
+      <div class="prom-label">Men Only Brand</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=120&q=70&fit=crop" alt="Secure"/></div>
+      <div class="prom-label">Secure Payment</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=120&q=70&fit=crop" alt="WhatsApp"/></div>
+      <div class="prom-label">WhatsApp Support</div>
+    </div>
+    <div class="prom-item">
+      <div class="prom-circle"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=120&q=70&fit=crop" alt="Quality"/></div>
+      <div class="prom-label">No Compromise on Quality</div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials removed -->
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="about-img-wrap fade-in">
+      <div class="about-photo">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&fit=crop&crop=face" alt="Ajay Krishna - Founder" loading="lazy"/>
+      </div>
+      <div class="about-info">
+        <div class="about-name">Ajay Krishna</div>
+        <div class="about-role">Founder & Chief Designer</div>
+        <div class="about-edu">🎓 BBA Graduate</div>
+        <p style="font-size:.78rem;color:var(--text);line-height:1.7;margin-top:10px;">With a sharp business mind and deep passion for metalwork, Ajay founded Eternity to fill a gap — premium, fully customised men's jewellery that merges personal meaning with masterful craft.</p>
+      </div>
+    </div>
+    <div class="about-text fade-in">
+      <h2>Where Mastery<br>Meets Metal</h2>
+      <p>Eternity was born from a simple belief: every man deserves jewellery as unique as his story. We design and craft exclusive rings and chains for men — no mass production, no compromises.</p>
+      <p>Our signature is full customisation. From the first sketch in CAD to the final polish, nothing leaves our bench without your approval. We specialise in pieces that command presence and carry personal meaning.</p>
+      <p>Based in Tiruchirappalli, Tamil Nadu, we serve clients across India with the same personal touch every time.</p>
+      <div class="about-stats">
+        <div class="about-stat"><div class="about-stat-num">500+</div><div class="about-stat-lbl">Custom Pieces</div></div>
+        <div class="about-stat"><div class="about-stat-num">100%</div><div class="about-stat-lbl">Bespoke</div></div>
+        <div class="about-stat"><div class="about-stat-num">2+</div><div class="about-stat-lbl">Years</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM GRID -->
+<section class="insta-section">
+  <div class="section-title-dark fade-in">We're Making Rings</div>
+  <div class="section-sub fade-in">#EternityJewels</div>
+  <div class="insta-grid">
+    <div class="insta-cell large">
+      <img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=700&q=80&fit=crop" alt="Gold chain" loading="lazy"/>
+      <div class="insta-overlay"><span>#CHAIN</span><span>SHOP NOW</span></div>
+      <div class="shop-now-tag">SHOP NOW</div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=75&fit=crop" alt="Ring" loading="lazy"/>
+      <div class="insta-overlay"><span>#RING</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=75&fit=crop" alt="Cuff" loading="lazy"/>
+      <div class="insta-overlay"><span>#CUFF</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=75&fit=crop" alt="Diamond" loading="lazy"/>
+      <div class="insta-overlay"><span>#DIAMOND</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=75&fit=crop" alt="Blackout" loading="lazy"/>
+      <div class="insta-overlay"><span>#BLACKOUT</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=75&fit=crop" alt="Gold" loading="lazy"/>
+      <div class="insta-overlay"><span>#GOLD</span></div>
+    </div>
+    <div class="insta-cell large">
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=700&q=80&fit=crop" alt="Custom CAD" loading="lazy"/>
+      <div class="insta-overlay"><span>#CUSTOM CAD</span><span>YOUR DESIGN</span></div>
+      <div class="shop-now-tag">SHOP NOW</div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1503580868876-7cbb6b9a0f3a?w=600&q=80&fit=crop" alt="Earrings" loading="lazy"/>
+      <div class="insta-overlay"><span>#EARRINGS</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1520975911357-0f1e8d4d0b9a?w=600&q=80&fit=crop" alt="Pendants" loading="lazy"/>
+      <div class="insta-overlay"><span>#PENDANTS</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1520975698518-2f8a7d3d5b1d?w=600&q=80&fit=crop" alt="Chains" loading="lazy"/>
+      <div class="insta-overlay"><span>#CHAINS</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1576085898328-9d3d6f4b6a2f?w=600&q=80&fit=crop" alt="Bangles" loading="lazy"/>
+      <div class="insta-overlay"><span>#BANGLES</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1503342452485-86f7f7f0d8b5?w=600&q=80&fit=crop" alt="Necklaces" loading="lazy"/>
+      <div class="insta-overlay"><span>#NECKLACES</span></div>
+    </div>
+    <div class="insta-cell">
+      <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600&q=80&fit=crop" alt="Gold coins" loading="lazy"/>
+      <div class="insta-overlay"><span>#GOLD COINS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-info fade-in">
+      <h3>Begin Your<br>Custom Journey</h3>
+      <p>Whether you have a precise design in mind or just a feeling you can't put into words, we'll help you bring it to life.</p>
+      <div class="contact-detail">
+        <div class="ci-icon" style="font-size:1rem;color:#fff;">📍</div>
+        <div><div class="ci-label">Location</div><div class="ci-val">Tiruchirappalli, Tamil Nadu, India</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ci-icon" style="font-size:1rem;color:#fff;">📱</div>
+        <div><div class="ci-label">WhatsApp</div><div class="ci-val">+91 XXXXX XXXXX</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ci-icon" style="font-size:1rem;color:#fff;">✉️</div>
+        <div><div class="ci-label">Email</div><div class="ci-val">hello@eternityjewels.in</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ci-icon" style="font-size:1rem;color:#fff;">🕐</div>
+        <div><div class="ci-label">Hours</div><div class="ci-val">Mon – Sat · 10 AM – 7 PM IST</div></div>
+      </div>
+    </div>
+    <form class="contact-form fade-in" onsubmit="handleForm(event)">
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Rahul" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Kumar" required></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="rahul@email.com" required></div>
+      <div class="fg"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+      <div class="fg">
+        <label>Interested In</label>
+        <select>
+          <option value="">Select a product type</option>
+          <option>Custom Ring</option>
+          <option>Custom Chain / Necklace</option>
+          <option>Custom Bracelet</option>
+          <option>Custom Pendant</option>
+          <option>Full Set</option>
+          <option>Something Unique</option>
+        </select>
+      </div>
+      <div class="fg"><label>Describe Your Dream Piece</label><textarea placeholder="Style, metal, stones, budget, occasion..."></textarea></div>
+      <button type="submit" class="submit-btn">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <span class="social-lbl">Follow & Connect</span>
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="soc-btn wa">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+  <a href="https://instagram.com/eternityjewels" target="_blank" class="soc-btn ig">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    Instagram
+  </a>
+  <a href="https://facebook.com/eternityjewels" target="_blank" class="soc-btn fb">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Facebook
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="color:#fff;margin-bottom:12px;">ETERNITY
+      </div>
+      <p>Fine men's jewellery crafted entirely to order. Every ring, every chain — designed first in CAD, approved by you, then brought to life in Tiruchirappalli, Tamil Nadu.</p>
+      <div style="margin-top:20px;">
+        <div class="footer-contact-btns">
+          <button class="footer-contact-btn" onclick="window.location.href='tel:+91XXXXXXXXXX'">📞 CALL US</button>
+          <button class="footer-contact-btn" onclick="window.location.href='mailto:hello@eternityjewels.in'">✉️ WRITE TO US</button>
+        </div>
+      </div>
+      <div class="follow-section">
+        <h4>FOLLOW US ON</h4>
+        <div class="social-icons">
+          <a href="https://facebook.com/eternityjewels" target="_blank" class="soc-circle">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com/eternityjewels" target="_blank" class="soc-circle">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="soc-circle">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#customize">Customize</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Custom Rings</a></li>
+        <li><a href="#">Gold Chains</a></li>
+        <li><a href="#">Silver Bands</a></li>
+        <li><a href="#">Bracelets</a></li>
+        <li><a href="#">Pendants</a></li>
+        <li><a href="#">Diamond Jewellery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="#">Custom Order Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <button class="footer-acc-btn" onclick="toggleAcc(this)">Customer Delight <span>▾</span></button>
+  <div class="footer-acc-content"><ul style="padding:10px 0 16px;"><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">Free Design Revisions</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">CAD Preview Guarantee</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">WhatsApp Support</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">Secure Payment</li></ul></div>
+  <button class="footer-acc-btn" onclick="toggleAcc(this)">Policies <span>▾</span></button>
+  <div class="footer-acc-content"><ul style="padding:10px 0 16px;"><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">Custom Order Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">Refund Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">Privacy Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.7);">Shipping Info</li></ul></div>
+  <div class="footer-bottom">
+    <p>© 2025 Eternity Fine Jewellery · All rights reserved</p>
+    <p>Crafted with ♦ in Tiruchirappalli, India</p>
+  </div>
+</footer>
+
+<script>
+/* PRODUCT DATA with real photos */
+const prods=[
+  {id:1,cat:'ring',img:'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80&fit=crop',mat:'Gold · 22K',badge:'Bestseller',name:'Sovereign Signet Ring',desc:'Bold flat-top signet in 22K gold with hand-engraved crest motif. The ring for the man who commands every room.',price:'₹28,000',orig:'₹34,000'},
+  {id:2,cat:'chain',img:'https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=600&q=80&fit=crop',mat:'Gold · 18K',badge:'Custom',name:'Emperor Cuban Chain',desc:'Thick Cuban link chain in 18K gold, 22 inches. Width and length fully customisable. Unmatched weight and presence.',price:'₹55,000',orig:''},
+  {id:3,cat:'ring',img:'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80&fit=crop',mat:'Silver · 925',badge:'New Arrival',name:'Onyx Warrior Band',desc:'Sterling silver band set with a deep black onyx stone, flanked by geometric engravings. Rugged masculinity refined.',price:'₹4,500',orig:'₹5,500'},
+  {id:4,cat:'chain',img:'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=600&q=80&fit=crop',mat:'Silver · 925',badge:'Custom',name:'Serpent Rope Chain',desc:'Twisted rope-style chain in oxidised sterling silver. The contrast finish gives depth rarely seen in silver.',price:'₹8,000',orig:''},
+  {id:5,cat:'ring',img:'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80&fit=crop',mat:'Gold · 18K',badge:'Limited',name:'Diamond Crown Ring',desc:'Cushion-cut diamond crown setting in 18K white gold. Everyday luxury for the discerning gentleman.',price:'₹65,000',orig:'₹72,000'},
+  {id:6,cat:'bracelet',img:'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80&fit=crop',mat:'Gold · 22K',badge:'Custom',name:'Rajasthan Cuff',desc:'Wide open cuff bracelet inspired by royal Rajasthani motifs, hand-etched in 22K gold. A collector\'s piece.',price:'₹38,000',orig:''},
+  {id:7,cat:'ring',img:'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80&fit=crop',mat:'Black Rhodium',badge:'Exclusive',name:'Eclipse Blackout Ring',desc:'Black rhodium-plated silver ring with matte gunmetal finish. The anti-bling choice that still says everything.',price:'₹6,500',orig:'₹8,000'},
+  {id:8,cat:'chain',img:'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80&fit=crop',mat:'Gold · 24K',badge:'Custom',name:'Solid Figaro Link',desc:'Classic Italian Figaro pattern in solid 24K gold. Three-and-one alternating links, fully polished. Timeless.',price:'₹72,000',orig:''},
+  {id:9,cat:'bracelet',img:'https://images.unsplash.com/photo-1603255182586-01b9e7f3c8a7?w=600&q=80&fit=crop',mat:'Silver · 925',badge:'New Arrival',name:'Viking Braid Bracelet',desc:'Three-strand braided sterling silver bracelet with Norse knotwork end-caps. Strength and symbolism on your wrist.',price:'₹5,200',orig:'₹6,200'},
+  {id:10,cat:'ring',img:'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80&fit=crop',mat:'Gold · 18K',badge:'Custom',name:'Nature Script Ring',desc:'Organic vine and leaf motif carved in 18K yellow gold. For the man who carries the earth\'s quiet strength.',price:'₹22,000',orig:'₹26,000'},
+];
+
+function renderProds(filter='all'){
+  const list=filter==='all'?prods:prods.filter(p=>p.cat===filter);
+  document.getElementById('prodGrid').innerHTML=list.map(p=>`
+    <div class="prod-card" onclick="openModal(${p.id})">
+      <div class="prod-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+        <div class="prod-overlay"><button class="prod-overlay-btn">Quick View</button></div>
+      </div>
+      <div class="prod-info">
+        <span class="prod-badge">${p.badge}</span>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-desc">${p.desc}</div>
+        <div class="prod-price">${p.orig?`<s>${p.orig}</s> `:''} ${p.price}</div>
+        <button class="prod-cta">Customize This →</button>
+      </div>
+    </div>
+  `).join('');
+  observeFade();
+}
+
+function filterProds(cat,btn){
+  document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProds(cat);
+}
+
+function filterAndGo(cat){
+  document.querySelectorAll('.filt-btn').forEach(b=>{
+    b.classList.toggle('active',b.textContent.toLowerCase().includes(cat)||cat==='all'&&b.textContent==='All');
+  });
+  renderProds(cat);
+  document.getElementById('catalogue').scrollIntoView({behavior:'smooth'});
+}
+
+/* MODAL */
+function openModal(id){
+  const p=prods.find(x=>x.id===id);
+  document.getElementById('mImg').src=p.img;
+  document.getElementById('mImg').alt=p.name;
+  document.getElementById('mBadge').textContent=p.mat+' · '+p.badge;
+  document.getElementById('mName').textContent=p.name;
+  document.getElementById('mDesc').textContent=p.desc;
+  document.getElementById('mPrice').textContent=p.price;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+/* HERO SLIDER */
+let curSlide=0,totalSlides=3,timer;
+function buildDots(){
+  const d=document.getElementById('heroDots');d.innerHTML='';
+  for(let i=0;i<totalSlides;i++){
+    const dot=document.createElement('div');
+    dot.className='hero-dot'+(i===0?' active':'');
+    dot.onclick=()=>goSlide(i);d.appendChild(dot);
+  }
+}
+function goSlide(n){
+  curSlide=(n+totalSlides)%totalSlides;
+  document.getElementById('heroSlides').style.transform=`translateX(-${curSlide*100}%)`;
+  document.querySelectorAll('.hero-dot').forEach((d,i)=>d.classList.toggle('active',i===curSlide));
+  resetTimer();
+}
+function changeSlide(dir){goSlide(curSlide+dir);}
+function resetTimer(){clearInterval(timer);timer=setInterval(()=>goSlide(curSlide+1),4500);}
+buildDots();resetTimer();
+
+/* MOBILE MENU */
+function toggleMob(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobMenu').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mobMenu').classList.contains('open')?'hidden':'';
+}
+function closeMob(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mobMenu').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* FOOTER ACCORDION */
+function toggleAcc(btn){
+  const content=btn.nextElementSibling;
+  content.classList.toggle('open');
+  btn.querySelector('span').textContent=content.classList.contains('open')?'▴':'▾';
+}
+
+/* FORM */
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.submit-btn');
+  btn.textContent='Sent! We\'ll be in touch ✓';
+  btn.style.background='#2a7a3a';
+  setTimeout(()=>{btn.textContent='Send Enquiry →';btn.style.background='';e.target.reset();},3500);
+}
+
+/* FADE IN */
+function observeFade(){
+  const els=document.querySelectorAll('.fade-in:not(.visible)');
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach((en,i)=>{
+      if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*70);obs.unobserve(en.target);}
+    });
+  },{threshold:.1});
+  els.forEach(el=>obs.observe(el));
+}
+
+renderProds();
+observeFade();
+</script>
+</body>
+</html>

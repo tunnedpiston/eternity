@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eternity – Fine Men's Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#021024;
+  --navy2:#052659;
+  --navy3:#5483B3;
+  --accent:#C1E8FF;
+  --accent2:#7DA0CA;
+  --accent-light:#5483B3;
+  --white:#FFFFFF;
+  --text-primary:#FFFFFF;
+  --text-secondary:rgba(255,255,255,0.85);
+  --text-tertiary:rgba(255,255,255,0.65);
+  --glass-dark:rgba(10,25,47,0.6);
+  --glass-dark-border:rgba(193,232,255,0.25);
+  --glass-light:rgba(255,255,255,0.08);
+  --glass-light-border:rgba(193,232,255,0.15);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'Space Grotesk',monospace;
+  --shadow:0 0 30px rgba(193,232,255,0.15);
+  --shadow2:0 15px 50px rgba(0,0,0,0.5);
+  --glow-accent:0 0 20px rgba(193,232,255,0.35), 0 0 40px rgba(193,232,255,0.18);
+  --radius:14px;--tr:0.3s ease;
+  --glass:rgba(10,25,47,0.7);
+  --glass-border:rgba(193,232,255,0.2);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:#FFFFFF;background:linear-gradient(180deg,#021024 0%,#052659 12%,#7DA0CA 45%,#7DA0CA 55%,#052659 85%,#021024 100%);overflow-x:hidden;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;position:relative;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%, rgba(193,232,255,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(193,232,255,0.06) 0%, transparent 50%);pointer-events:none;z-index:0;}
+img{max-width:100%;display:block;object-fit:cover;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:linear-gradient(180deg,#052659,#7DA0CA); }
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;box-shadow:var(--glow-accent);}
+
+/* ── FORCE HEADINGS UPPERCASE ── */
+h1,h2,h3,h4,h5,h6,
+.section-title,
+.cat-card-name,
+.cat-card-tag,
+.hfc-title,
+.cust-step-title,
+.proc-title,
+.prom-title,
+.prod-name,
+.modal-name,
+.aft-name,
+.ci-val{
+  text-transform:uppercase;
+  color:#FFFFFF !important;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-rendering:optimizeLegibility;
+}
+
+/* Stronger contrast for heading accents */
+.section-title,
+.proc-title,
+.prom-title,
+.modal-name,
+.aft-name,
+.prod-name,
+.hfc-title,
+.cust-step-title{
+  color:#FFFFFF !important;
+  text-shadow:0 0 20px rgba(193,232,255,0.2);
+}
+
+/* Keep banner headings aligned with the palette */
+.customize-text .section-title{
+  color:#fff !important;
+  text-shadow:0 0 20px rgba(193,232,255,0.25);
+}
+
+/* Force the category section text to stay white */
+.cat-section .section-label,
+.cat-section .section-title{
+  color:#fff !important;
+}
+
+/* Keep only hero title white */
+.hero-title{
+  color:#fff !important;
+}
+
+/* ── TOPBAR ── */
+.topbar{background:linear-gradient(90deg, rgba(238,246,255,0.96) 0%, rgba(210,227,245,0.96) 100%);background-image:linear-gradient(90deg, rgba(5,38,89,0.9) 0%, rgba(100,180,255,0.85) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;padding:9px 16px;font-size:.72rem;letter-spacing:.08em;font-family:var(--mono);border-bottom:1px solid rgba(139,178,217,0.45);box-shadow:0 4px 15px rgba(2,16,36,0.08);}
+.topbar b{color:inherit;-webkit-text-fill-color:inherit;font-weight:700;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(255,255,255,0.88);border-bottom:1px solid rgba(139,178,217,0.45);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;box-shadow:0 8px 32px rgba(2,16,36,0.08);transition:background var(--tr);}
+.nav-logo{font-family:var(--serif);font-size:2.35rem;font-weight:900;color:rgba(2,16,36,0.95);letter-spacing:.24em;display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-transform:uppercase;word-spacing:.35em;line-height:.9;text-shadow:0 0 10px rgba(2,16,36,0.06);} .nav-logo-sub{font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.42em;color:rgba(2,16,36,0.65);text-transform:uppercase;line-height:1.2;}
+.nav-logo-icon{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(84,131,179,0.35);box-shadow:0 0 12px rgba(84,131,179,0.18);}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:.8rem;font-weight:600;color:rgba(2,16,36,0.88);letter-spacing:.04em;transition:color var(--tr);position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:rgba(84,131,179,0.9);border-radius:99px;transition:width var(--tr),box-shadow var(--tr);box-shadow:0 0 12px rgba(84,131,179,0.18);}
+.nav-links a:hover{color:rgba(84,131,179,0.98);}
+.nav-links a:hover::after{width:110%;box-shadow:0 0 16px rgba(84,131,179,0.22);}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.nav-icon-btn{background:none;border:none;cursor:pointer;color:rgba(2,16,36,0.88);font-size:1.1rem;display:flex;align-items:center;transition:color var(--tr), text-shadow var(--tr);}
+.nav-icon-btn:hover{color:rgba(84,131,179,0.95);text-shadow:0 0 10px rgba(84,131,179,0.16);}
+.nav-cta{padding:9px 22px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;font-size:.75rem;font-weight:600;letter-spacing:.06em;border-radius:50px;border:1px solid var(--accent);cursor:pointer;transition:all var(--tr);box-shadow:0 4px 16px rgba(193,232,255,0.3);font-weight:700;}
+.nav-cta:hover{transform:translateY(-2px);background:linear-gradient(135deg,var(--accent-light),var(--accent));box-shadow:0 8px 25px rgba(193,232,255,0.4);text-shadow:0 0 10px rgba(2,16,36,0.12);}
+.nav-cta:active,.nav-cta:focus-visible{transform:scale(.96);background:linear-gradient(135deg,var(--accent2),var(--accent));box-shadow:0 0 0 3px rgba(193,232,255,0.2);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--accent);border-radius:2px;transition:transform var(--tr),opacity var(--tr);}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu{display:none;position:fixed;inset:0;top:68px;background:rgba(84,131,179,0.18);backdrop-filter:blur(20px);z-index:199;padding:32px 6%;}
+.mob-menu.open{display:block;}
+.mob-menu a{display:block;padding:16px 0;font-size:1.1rem;font-weight:500;border-bottom:1px solid rgba(193,232,255,0.15);color:#FFFFFF;}
+
+/* ── HERO – Magazine Split ── */
+.hero{min-height:92vh;display:grid;grid-template-columns:1.02fr 0.98fr;align-items:stretch;position:relative;overflow:hidden;background:linear-gradient(90deg,#021024 0%,#052659 28%,#0b3a6e 55%,#021024 100%);}
+.hero-left{position:relative;min-width:0;width:100%;background:linear-gradient(90deg,rgba(2,16,36,0.98) 0%,rgba(5,38,89,0.96) 38%,rgba(10,25,47,0.92) 74%,rgba(193,232,255,0.08) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:60px 5% 60px 6%;z-index:2;border-right:1px solid rgba(193,232,255,0.12);}
+.hero-left::before{content:'ETERNITY';position:absolute;top:50%;left:-20px;transform:translateY(-50%) rotate(-90deg);font-family:var(--serif);font-size:8rem;font-weight:700;color:rgba(193,232,255,0.06);letter-spacing:.3em;white-space:nowrap;pointer-events:none;}
+.hero-left::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 28%,rgba(193,232,255,0.08),transparent 12%),radial-gradient(circle at 68% 70%,rgba(193,232,255,0.05),transparent 18%),linear-gradient(180deg,transparent 0%,rgba(2,16,36,0.18) 100%);pointer-events:none;}
+.hero-eyebrow{font-family:var(--mono);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(193,232,255,0.9);margin-bottom:20px;display:flex;align-items:center;gap:10px;font-weight:600;}
+.hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--accent);box-shadow:var(--glow-accent);}
+.hero-title{font-family:var(--serif);font-size:clamp(2.8rem,5vw,5rem);line-height:1.05;color:#FFFFFF;font-weight:700;margin-bottom:24px;text-shadow:0 0 30px rgba(193,232,255,0.25);}
+.hero-title em{font-style:italic;color:var(--accent);text-shadow:var(--glow-accent);}
+.hero-sub{font-size:.88rem;color:rgba(255,255,255,0.75);line-height:1.9;max-width:400px;margin-bottom:40px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;font-size:.78rem;font-weight:700;letter-spacing:.06em;border-radius:50px;border:1px solid var(--accent);transition:all var(--tr);box-shadow:0 0 20px rgba(193,232,255,0.35), inset 0 -2px 8px rgba(2,16,36,0.12);}
+.btn-primary:hover{transform:translateY(-3px);background:linear-gradient(135deg,var(--accent-light),var(--accent));box-shadow:0 0 30px rgba(193,232,255,0.5), inset 0 -1px 4px rgba(0,0,0,0.1);}
+.btn-primary:active,.btn-primary:focus-visible{transform:scale(.96);background:linear-gradient(135deg,var(--accent2),var(--accent));box-shadow:0 0 0 3px rgba(193,232,255,0.2);}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border:1.5px solid var(--accent);color:var(--accent);font-size:.78rem;font-weight:600;letter-spacing:.06em;border-radius:50px;background:transparent;transition:all var(--tr);box-shadow:0 0 15px rgba(193,232,255,0.2);}
+.btn-outline:hover{background:rgba(193,232,255,0.1);color:#FFFFFF;border-color:var(--accent-light);box-shadow:0 0 25px rgba(193,232,255,0.35);}
+.btn-outline:active,.btn-outline:focus-visible{transform:scale(.96);background:rgba(193,232,255,0.15);box-shadow:0 0 0 3px rgba(193,232,255,0.2);}
+a[href*="wa.me"].btn-primary,
+a[href*="wa.me"].btn-outline,
+a[href*="wa.me"].submit-btn,
+a[href*="wa.me"].prod-cta-sm,
+a[href*="wa.me"].modal-btn-primary{background:#25d366 !important;border-color:#25d366 !important;color:#fff !important;box-shadow:0 0 20px rgba(37,211,102,0.35) !important;}
+a[href*="wa.me"].btn-primary:hover,
+a[href*="wa.me"].btn-outline:hover,
+a[href*="wa.me"].submit-btn:hover,
+a[href*="wa.me"].prod-cta-sm:hover,
+a[href*="wa.me"].modal-btn-primary:hover{background:#128c7e !important;border-color:#128c7e !important;color:#fff !important;box-shadow:0 0 30px rgba(37,211,102,0.45) !important;}
+.hero-stats{display:flex;gap:32px;margin-top:44px;padding-top:32px;border-top:1px solid rgba(193,232,255,0.2);}
+.hero-stat-num{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent);text-shadow:var(--glow-accent);}
+.hero-stat-lbl{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(193,232,255,0.7);margin-top:2px;}
+.hero-right{position:relative;overflow:hidden;background:linear-gradient(135deg, rgba(5,38,89,0.92) 0%, rgba(10,25,47,0.88) 100%);aspect-ratio:5/6;min-height:560px;max-height:760px;width:100%;height:100%;min-width:0;align-self:stretch;}
+.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 40%,rgba(193,232,255,0.12),transparent 35%), radial-gradient(circle at 40% 70%,rgba(193,232,255,0.08),transparent 30%);pointer-events:none;}
+.hero-right::after{content:'';position:absolute;inset:0;pointer-events:none;}
+.hero-right-img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(1) contrast(1.05);transition:opacity 1.2s cubic-bezier(.22,1,.36,1),transform 12s ease;opacity:1;will-change:opacity,transform;}
+.hero-right:hover .hero-right-img{transform:scale(1.04);}
+.hero-right-overlay{position:absolute;inset:0;background:transparent;}
+.hero-float-card{position:absolute;bottom:40px;right:32px;background:rgba(193,232,255,0.3);backdrop-filter:blur(16px);border:1px solid rgba(193,232,255,0.38);border-radius:16px;padding:18px 22px;min-width:200px;box-shadow:0 8px 32px rgba(193,232,255,0.25), inset 0 1px 1px rgba(193,232,255,0.12);}
+.hfc-label{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(193,232,255,0.8);font-weight:600;margin-bottom:4px;}
+.hfc-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:#FFFFFF;margin-bottom:10px;}
+.hfc-price{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--accent);text-shadow:var(--glow-accent);}
+.hfc-btn{margin-top:10px;display:block;text-align:center;padding:8px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;font-size:.7rem;font-weight:600;letter-spacing:.06em;border-radius:50px;border:1px solid var(--accent);box-shadow:0 0 15px rgba(193,232,255,0.3);}
+.hero-slide-dots{position:absolute;bottom:32px;left:6%;display:flex;gap:8px;z-index:5;}
+.h-dot{width:6px;height:6px;border-radius:50%;background:rgba(193,232,255,0.35);cursor:pointer;transition:all var(--tr);}
+.h-dot.active{background:var(--accent);width:24px;border-radius:3px;box-shadow:var(--glow-accent);}
+
+/* ── TICKER ── */
+.ticker-wrap{overflow:hidden;background:linear-gradient(90deg, rgba(238,246,255,0.98) 0%, rgba(210,227,245,0.92) 35%, rgba(173,204,235,0.85) 65%, rgba(139,178,217,0.8) 100%);border-top:1px solid rgba(193,232,255,0.45);border-bottom:1px solid rgba(193,232,255,0.45);padding:14px 0;box-shadow:0 4px 20px rgba(2,16,36,0.08);}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:ticker 28s linear infinite;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{display:inline-flex;align-items:center;gap:12px;padding:0 40px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(2,16,36,0.88);}
+.ticker-item .dot{width:4px;height:4px;border-radius:50%;background:rgba(84,131,179,0.95);box-shadow:0 0 10px rgba(84,131,179,0.4);}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── CATEGORIES – Horizontal pill cards ── */
+.cat-section{padding:60px 6%;background:linear-gradient(180deg, rgba(2,16,36,0.92) 0%, rgba(5,38,89,0.95) 55%, rgba(10,25,47,0.98) 100%);border-top:1px solid rgba(193,232,255,0.12);border-bottom:1px solid rgba(193,232,255,0.12);}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px;}
+.section-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(193,232,255,0.85);font-weight:800;margin-bottom:8px;}
+.section-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#FFFFFF;line-height:1.2;text-shadow:0 0 20px rgba(193,232,255,0.2);}
+.section-link{font-size:.78rem;font-weight:500;color:#FFFFFF;display:flex;align-items:center;gap:6px;transition:color var(--tr), text-shadow var(--tr);white-space:nowrap;}
+.section-link:hover{color:var(--accent);text-shadow:var(--glow-accent);}
+.section-link svg{width:14px;height:14px;stroke:#FFFFFF;fill:none;stroke-width:2;transition:transform var(--tr), stroke var(--tr);}
+.section-link:hover svg{transform:translateX(3px);stroke:var(--accent);}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:36px;}
+.cat-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;transform:translateY(0);transition:transform var(--tr), box-shadow var(--tr), border var(--tr);outline:2px solid rgba(193,232,255,0.3);outline-offset:4px;box-shadow:0 0 0 1px rgba(193,232,255,0.15), 0 0 20px rgba(193,232,255,0.15);border:1px solid rgba(193,232,255,0.25);}
+.cat-card:nth-child(2){margin-top:30px;}
+.cat-card:nth-child(4){margin-top:30px;}
+.cat-card:hover{transform:translateY(-12px);box-shadow:0 24px 48px rgba(193,232,255,0.3), 0 0 30px rgba(193,232,255,0.25);border-color:rgba(193,232,255,0.5);}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(1) contrast(1.05);}
+.cat-card:hover img{transform:scale(1.08);filter:brightness(1.02) contrast(1.1);}
+.cat-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,17,31,0.92) 0%,rgba(10,25,47,0.3) 60%,rgba(193,232,255,0.05) 100%);}
+.cat-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px 18px;}
+.cat-card-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(193,232,255,0.9);margin-bottom:4px;font-weight:700;}
+.cat-card-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#FFFFFF;text-shadow:0 0 15px rgba(193,232,255,0.3);}
+.cat-card-count{font-size:.7rem;color:rgba(255,255,255,0.88);margin-top:4px;}
+.cat-card-btn{display:inline-flex;align-items:center;gap:4px;margin-top:10px;padding:6px 14px;background:rgba(193,232,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(193,232,255,0.4);border-radius:50px;color:var(--accent);font-size:.65rem;font-weight:600;letter-spacing:.06em;opacity:0;transform:translateY(6px);transition:opacity var(--tr), transform var(--tr), background var(--tr);box-shadow:0 0 12px rgba(193,232,255,0.2);}
+.cat-card:hover .cat-card-btn{opacity:1;transform:translateY(0);background:rgba(193,232,255,0.25);}
+
+/* ── CATALOGUE – Masonry feel ── */
+.catalogue-section{padding:70px 6%;background:linear-gradient(180deg, rgba(238,246,255,0.98) 0%, rgba(210,227,245,0.9) 35%, rgba(173,204,235,0.8) 65%, rgba(139,178,217,0.75) 100%);border-top:1px solid rgba(193,232,255,0.45);border-bottom:1px solid rgba(193,232,255,0.45);}
+.catalogue-section .section-label{color:rgba(2,16,36,0.65) !important;}
+.catalogue-section .section-title{color:rgba(2,16,36,0.95) !important;text-shadow:0 0 20px rgba(255,255,255,0.45);}
+.catalogue-section .section-link{color:rgba(2,16,36,0.75);}
+.catalogue-section .section-link:hover{color:rgba(84,131,179,0.95);text-shadow:0 0 10px rgba(84,131,179,0.18);}
+.filter-row{display:flex;gap:8px;margin-bottom:36px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;}
+.filter-row::-webkit-scrollbar{display:none;}
+.filt-btn{padding:9px 24px;border:1.5px solid rgba(84,131,179,0.35);border-radius:50px;font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.08em;background:rgba(255,255,255,0.7);cursor:pointer;color:rgba(2,16,36,0.9);transition:all var(--tr);white-space:nowrap;flex-shrink:0;}
+.filt-btn:hover,.filt-btn.active{border-color:rgba(84,131,179,0.95);background:rgba(84,131,179,0.95);color:#fff;font-weight:700;box-shadow:0 0 20px rgba(84,131,179,0.2);}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.prod-card{border-radius:18px;overflow:hidden;background:rgba(5,38,89,0.55);backdrop-filter:blur(16px);border:1px solid rgba(193,232,255,0.25);cursor:pointer;transition:transform var(--tr), box-shadow var(--tr), border var(--tr);box-shadow:0 8px 24px rgba(193,232,255,0.15), inset 0 1px 1px rgba(193,232,255,0.1);}
+.prod-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(193,232,255,0.3), inset 0 1px 1px rgba(193,232,255,0.15);border-color:rgba(193,232,255,0.4);}
+.prod-img{width:100%;height:280px;position:relative;overflow:hidden;background:rgba(5,38,89,0.65);border-bottom:1px solid rgba(193,232,255,0.2);}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:brightness(1) contrast(1.05);}
+.prod-card:hover .prod-img img{transform:scale(1.08);filter:brightness(1) contrast(1.15);}
+.prod-tags{position:absolute;top:14px;left:14px;display:flex;gap:6px;flex-wrap:wrap;}
+.prod-tag{padding:4px 12px;border-radius:50px;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.prod-tag.badge-new{background:var(--accent);color:#021024;box-shadow:0 0 15px rgba(193,232,255,0.4);}
+.prod-tag.badge-hot{background:var(--accent);color:#021024;box-shadow:0 0 15px rgba(193,232,255,0.4);}
+.prod-tag.badge-custom{background:rgba(193,232,255,0.2);color:var(--accent);border:1px solid rgba(193,232,255,0.4);}
+.prod-tag.badge-limited{background:rgba(193,232,255,0.15);color:var(--accent);border:1px solid rgba(193,232,255,0.3);}
+.prod-quick{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,17,31,0.92),rgba(17,34,64,0.88));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--tr);}
+.prod-card:hover .prod-quick{opacity:1;}
+.prod-quick-btn{padding:12px 28px;background:var(--accent);color:#021024;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.08em;border-radius:50px;border:1px solid var(--accent);cursor:pointer;transform:translateY(4px);transition:transform var(--tr) .05s;box-shadow:0 0 20px rgba(193,232,255,0.4);}
+.prod-card:hover .prod-quick-btn{transform:translateY(0);}
+.prod-info{padding:18px 18px 20px;}
+.prod-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.prod-material{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(193,232,255,0.8);}
+.prod-name{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#FFFFFF;margin-bottom:6px;line-height:1.25;text-shadow:0 0 12px rgba(193,232,255,0.15);}
+.prod-desc{font-size:.76rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:14px;}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;}
+.prod-price{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--accent);text-shadow:0 0 12px rgba(193,232,255,0.25);}
+.prod-price s{font-size:.8rem;color:rgba(193,232,255,0.6);font-weight:400;margin-right:4px;}
+.prod-cta-sm{padding:8px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;font-size:.68rem;font-weight:600;letter-spacing:.06em;border-radius:50px;border:1px solid var(--accent);cursor:pointer;transition:all var(--tr);box-shadow:0 0 15px rgba(193,232,255,0.3);}
+.prod-cta-sm:hover{background:linear-gradient(135deg,var(--accent-light),var(--accent));box-shadow:0 0 25px rgba(193,232,255,0.4);transform:translateY(-2px);}
+.prod-cta-sm:active,.prod-cta-sm:focus-visible{transform:scale(.95);background:linear-gradient(135deg,var(--accent2),var(--accent));}
+
+/* ── COLLECTIONS – Grid showcase ── */
+.collections-section{padding:70px 6% 90px;background:linear-gradient(180deg, rgba(2,16,36,0.92) 0%, rgba(5,38,89,0.95) 45%, rgba(10,25,47,0.98) 100%);border-top:1px solid rgba(193,232,255,0.12);border-bottom:1px solid rgba(193,232,255,0.12);}
+.collections-scroll{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:26px;padding:0 6%;}
+.collections-scroll::-webkit-scrollbar{display:none;}
+.coll-card{border-radius:28px;overflow:hidden;position:relative;aspect-ratio:4/5;cursor:pointer;transition:transform var(--tr),box-shadow var(--tr);border:1px solid rgba(193,232,255,0.18);box-shadow:0 20px 60px rgba(193,232,255,0.14);background:rgba(10,25,47,0.54);}
+.coll-card:hover{transform:translateY(-10px);box-shadow:0 28px 80px rgba(193,232,255,0.28);}
+.coll-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease, filter .7s ease;filter:brightness(1) contrast(1.05);}
+.coll-card:hover img{transform:scale(1.08) rotate(0.5deg);filter:brightness(1.02) contrast(1.1);}
+.coll-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,17,31,0.92) 0%,rgba(10,25,47,0.45) 45%,rgba(7,17,31,0.88) 100%);}
+.coll-body{position:absolute;bottom:0;left:0;right:0;padding:30px 26px;}
+.coll-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(193,232,255,0.92);margin-bottom:12px;}
+.coll-name{font-family:var(--serif);font-size:1.5rem;font-weight:800;color:#FFFFFF;margin-bottom:12px;text-shadow:0 0 22px rgba(193,232,255,0.22);}
+.coll-desc{font-size:.9rem;color:rgba(255,255,255,.85);line-height:1.9;margin-bottom:20px;max-width:92%;}
+.coll-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:.84rem;font-weight:800;letter-spacing:.1em;border-bottom:1px solid rgba(193,232,255,0.5);padding-bottom:2px;transition:all var(--tr);}
+.coll-link:hover{border-color:var(--accent);text-shadow:0 0 12px rgba(193,232,255,0.2);}
+.coll-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(193,232,255,0.08),transparent 22%);pointer-events:none;}
+.coll-card:nth-child(1){grid-column:span 5;grid-row:span 2;aspect-ratio:3/4;}
+.coll-card:nth-child(2){grid-column:span 4;grid-row:span 1;}
+.coll-card:nth-child(3){grid-column:span 3;grid-row:span 2;aspect-ratio:3/5;}
+.coll-card:nth-child(4){grid-column:span 12;grid-row:span 1;aspect-ratio:7/3;}
+@media(max-width:1180px){.collections-scroll{grid-template-columns:repeat(8,minmax(0,1fr));}.coll-card:nth-child(1){grid-column:span 8;grid-row:span 1;}.coll-card:nth-child(2){grid-column:span 4;}.coll-card:nth-child(3){grid-column:span 4;}.coll-card:nth-child(4){grid-column:span 8;}.}
+@media(max-width:820px){.collections-scroll{grid-template-columns:1fr;}.coll-card{grid-column:span 1;}.coll-card:nth-child(1),.coll-card:nth-child(2),.coll-card:nth-child(3),.coll-card:nth-child(4){aspect-ratio:4/3;}}
+
+/* ── CUSTOMIZE BANNER ── */
+.customize-section{padding:80px 6%;background:linear-gradient(135deg, #021024 0%, #052659 35%, #0b3a6e 70%, #021024 100%);position:relative;overflow:hidden;border-top:1px solid rgba(193,232,255,0.15);border-bottom:1px solid rgba(193,232,255,0.15);}
+.customize-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(193,232,255,0.15),transparent 70%);pointer-events:none;}
+.customize-section::after{content:'';position:absolute;bottom:-80px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(193,232,255,0.12),transparent 70%);pointer-events:none;}
+.customize-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
+.customize-text .section-label{color:rgba(193,232,255,0.8);}
+.customize-text .section-title{color:#FFFFFF;text-shadow:0 0 25px rgba(193,232,255,0.2);}
+.customize-text p{font-size:.88rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-top:16px;margin-bottom:36px;}
+.cust-steps{display:flex;flex-direction:column;gap:0;}
+.cust-step{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(193,232,255,0.15);transition:all var(--tr);}
+.cust-step:last-child{border-bottom:none;}
+.cust-step:hover{transform:translateX(6px);}
+.cust-num{width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1.5px solid rgba(193,232,255,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.72rem;font-weight:700;color:rgba(193,232,255,0.7);background:rgba(193,232,255,0.05);}
+.cust-step:hover .cust-num{border-color:var(--accent);color:var(--accent);background:rgba(193,232,255,0.15);box-shadow:var(--glow-accent);}
+.cust-step-info{}
+.cust-step-title{font-size:.88rem;font-weight:600;color:#FFFFFF;margin-bottom:2px;}
+.cust-step-desc{font-size:.74rem;color:rgba(255,255,255,0.75);}
+.cust-imgs{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.cust-img-card{border-radius:16px;overflow:hidden;position:relative;border:1px solid rgba(193,232,255,0.25);box-shadow:0 8px 24px rgba(193,232,255,0.15);}
+.cust-img-card:first-child{grid-row:span 2;border-radius:20px;}
+.cust-img-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:brightness(1) contrast(1.05);}
+.cust-img-card:hover img{transform:scale(1.05);filter:brightness(1) contrast(1.15);}
+.cust-img-label{position:absolute;bottom:12px;left:12px;padding:5px 12px;background:rgba(10,25,47,0.8);backdrop-filter:blur(8px);border:1px solid rgba(193,232,255,0.3);border-radius:50px;font-size:.62rem;font-weight:600;color:var(--accent);box-shadow:0 0 12px rgba(193,232,255,0.2);}
+
+/* ── MATERIALS ── */
+.materials-section{padding:70px 6%;background:linear-gradient(180deg, rgba(238,246,255,0.98) 0%, rgba(210,227,245,0.9) 35%, rgba(173,204,235,0.8) 65%, rgba(139,178,217,0.75) 100%);border-top:1px solid rgba(193,232,255,0.45);border-bottom:1px solid rgba(193,232,255,0.45);}
+.mat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:8px;}
+.mat-card{border-radius:18px;overflow:hidden;position:relative;aspect-ratio:3/4;cursor:pointer;transition:transform var(--tr), box-shadow var(--tr);border:1px solid rgba(193,232,255,0.25);box-shadow:0 8px 24px rgba(193,232,255,0.15);}
+.mat-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(193,232,255,0.3);}
+.mat-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(1) contrast(1.05);}
+.mat-card:hover img{transform:scale(1.07);filter:brightness(1.02) contrast(1.1);}
+.mat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,17,31,0.92) 0%,transparent 55%);}
+.mat-name{position:absolute;bottom:20px;left:20px;font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--accent);text-shadow:0 0 15px rgba(193,232,255,0.3);}
+.mat-sub{position:absolute;bottom:0;left:20px;right:20px;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(193,232,255,0.8);transform:translateY(0);transition:transform var(--tr), bottom var(--tr);}
+.mat-card:hover .mat-sub{bottom:14px;}
+
+/* ── PROCESS ── */
+.process-section{padding:70px 6%;background:linear-gradient(180deg, rgba(2,16,36,0.95) 0%, rgba(5,38,89,0.94) 45%, rgba(10,25,47,0.98) 100%);border-top:1px solid rgba(193,232,255,0.12);border-bottom:1px solid rgba(193,232,255,0.12);}
+.process-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative;}
+.process-timeline::before{content:'';position:absolute;top:52px;left:12.5%;right:12.5%;height:3px;background:linear-gradient(90deg,transparent,rgba(193,232,255,0.4),rgba(193,232,255,0.8),rgba(193,232,255,0.4),transparent);box-shadow:0 0 20px rgba(193,232,255,0.25);border-radius:999px;z-index:0;}
+.proc-step{text-align:center;position:relative;z-index:1;padding:0 20px;}
+.proc-icon-wrap{width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 24px;border:3px solid var(--accent);box-shadow:0 0 25px rgba(193,232,255,0.3), inset 0 0 15px rgba(193,232,255,0.1);position:relative;background:rgba(10,25,47,0.5);}
+.proc-icon-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9) contrast(1.1);}
+.proc-num-badge{position:absolute;bottom:-4px;right:-4px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;font-family:var(--mono);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #021024;box-shadow:0 0 15px rgba(193,232,255,0.3);}
+.proc-title{font-family:var(--serif);font-size:1rem;font-weight:800;color:#FFFFFF;margin-bottom:8px;text-shadow:0 0 12px rgba(193,232,255,0.15);}
+.proc-desc{font-size:.75rem;color:rgba(255,255,255,0.8);line-height:1.7;}
+
+/* ── PROMISE STRIP ── */
+.promise-strip{padding:40px 6%;border-top:1px solid rgba(193,232,255,0.2);border-bottom:1px solid rgba(193,232,255,0.2);background:rgba(5,38,89,0.65);backdrop-filter:blur(10px);}
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.prom-item{display:flex;align-items:center;gap:14px;padding:20px 28px;border-right:1px solid rgba(193,232,255,0.2);}
+.prom-item:last-child{border-right:none;}
+.prom-icon{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,rgba(193,232,255,0.2),rgba(193,232,255,0.1));display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:1px solid rgba(193,232,255,0.3);box-shadow:0 0 12px rgba(193,232,255,0.15);}
+.prom-title{font-size:.82rem;font-weight:700;color:#FFFFFF;margin-bottom:2px;}
+.prom-desc{font-size:.7rem;color:rgba(255,255,255,0.75);line-height:1.5;}
+
+/* ── ABOUT ── */
+.about-section{padding:80px 6%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:linear-gradient(180deg, rgba(238,246,255,0.98) 0%, rgba(210,227,245,0.9) 35%, rgba(173,204,235,0.8) 65%, rgba(139,178,217,0.75) 100%);border-top:1px solid rgba(193,232,255,0.45);border-bottom:1px solid rgba(193,232,255,0.45);}
+.about-img-stack{position:relative;height:520px;}
+.about-img-main{position:absolute;top:0;left:0;width:75%;height:420px;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(193,232,255,0.25), inset 0 1px 1px rgba(193,232,255,0.1);border:1px solid rgba(193,232,255,0.25);filter:brightness(0.9) contrast(1.1);}
+.about-img-main img{width:100%;height:100%;object-fit:cover;}
+.about-img-secondary{position:absolute;bottom:0;right:0;width:55%;height:260px;border-radius:18px;overflow:hidden;box-shadow:0 15px 40px rgba(193,232,255,0.2), inset 0 1px 1px rgba(193,232,255,0.1);border:2px solid rgba(193,232,255,0.3);filter:brightness(0.9) contrast(1.1);}
+.about-img-secondary img{width:100%;height:100%;object-fit:cover;}
+.about-founder-tag{position:absolute;top:24px;right:-10px;background:rgba(10,25,47,0.8);backdrop-filter:blur(12px);border:1px solid rgba(193,232,255,0.3);border-radius:12px;padding:12px 18px;box-shadow:0 8px 20px rgba(193,232,255,0.15);}
+.aft-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--accent);text-shadow:0 0 10px rgba(193,232,255,0.2);}
+.aft-role{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(193,232,255,0.8);}
+.about-text .section-title{margin-bottom:20px;color:#FFFFFF;text-shadow:0 0 20px rgba(193,232,255,0.2);}
+.about-text p{font-size:.86rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:16px;}
+.about-stats{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(193,232,255,0.2);}
+.about-stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--accent);text-shadow:0 0 15px rgba(193,232,255,0.25);}
+.about-stat-lbl{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(193,232,255,0.8);margin-top:2px;}
+
+/* ── INSTAGRAM GRID ── */
+.insta-section{padding:70px 6%;background:linear-gradient(180deg, rgba(2,16,36,0.95) 0%, rgba(5,38,89,0.94) 45%, rgba(10,25,47,0.98) 100%);border-top:1px solid rgba(193,232,255,0.12);border-bottom:1px solid rgba(193,232,255,0.12);}
+.insta-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:240px;gap:32px;margin-top:32px;grid-auto-flow:dense;}
+.insta-cell{border-radius:24px;overflow:hidden;cursor:pointer;position:relative;min-height:240px;box-shadow:0 12px 40px rgba(193,232,255,0.2), inset 0 1px 1px rgba(193,232,255,0.1);border:1px solid rgba(193,232,255,0.25);backdrop-filter:blur(4px);transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);}
+.insta-cell::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,17,31,0.6),rgba(10,25,47,0.4));z-index:1;}
+.insta-cell.feature{grid-column:span 3;grid-row:span 2;min-height:520px;}
+.insta-cell.tall{grid-column:span 1;grid-row:span 1;min-height:240px;}
+.insta-cell.wide{grid-column:span 2;grid-row:span 1;min-height:240px;}
+.insta-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.8s ease;filter:brightness(0.8) contrast(1.15) saturate(1.1) hue-rotate(2deg);}
+.insta-cell:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(193,232,255,0.35), inset 0 1px 1px rgba(193,232,255,0.15);border-color:rgba(193,232,255,0.4);}
+.insta-cell:hover img{transform:scale(1.08) rotate(1deg);filter:brightness(0.92) contrast(1.2) saturate(1.25) hue-rotate(3deg);}
+.insta-overlay{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 22px;background:linear-gradient(180deg,transparent 0%,rgba(7,17,31,0.95) 60%,rgba(7,17,31,0.98) 100%);display:flex;align-items:flex-end;justify-content:space-between;opacity:0;transition:opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);}
+.insta-cell:hover .insta-overlay{opacity:1;}
+.insta-overlay span{color:var(--accent);font-family:var(--mono);font-size:0.7rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;text-shadow:0 0 12px rgba(193,232,255,0.3);}
+
+/* ── CONTACT ── */
+.contact-section{padding:80px 6%;background:linear-gradient(180deg, rgba(238,246,255,0.98) 0%, rgba(210,227,245,0.9) 35%, rgba(173,204,235,0.8) 65%, rgba(139,178,217,0.75) 100%);border-top:1px solid rgba(193,232,255,0.45);border-bottom:1px solid rgba(193,232,255,0.45);}
+.contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;max-width:1000px;margin:0 auto;align-items:start;}
+.contact-info .section-title{margin-bottom:20px;color:rgba(2,16,36,0.95);}
+.contact-info p{font-size:.86rem;color:rgba(2,16,36,0.82);line-height:1.9;margin-bottom:28px;}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
+.ci-icon{width:40px;height:40px;flex-shrink:0;background:linear-gradient(135deg,rgba(84,131,179,0.95),rgba(193,232,255,0.85));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 20px rgba(84,131,179,0.25);}
+.ci-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(2,16,36,0.7);font-weight:700;margin-bottom:2px;}
+.ci-val{font-size:.84rem;color:rgba(2,16,36,0.92);}
+.contact-form{background:rgba(255,255,255,0.92);border-radius:22px;padding:36px;box-shadow:0 12px 44px rgba(2,16,36,0.12), inset 0 1px 1px rgba(255,255,255,0.8);border:1px solid rgba(193,232,255,0.35);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fg{margin-bottom:16px;}
+.fg label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(2,16,36,0.85);margin-bottom:6px;display:block;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,0.86);border:1.5px solid rgba(139,178,217,0.6);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:.85rem;color:rgba(2,16,36,0.95);outline:none;transition:all var(--tr);}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(2,16,36,0.45);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(84,131,179,0.95);box-shadow:0 0 0 3px rgba(193,232,255,0.15), inset 0 0 0 1px rgba(193,232,255,0.1);background:rgba(255,255,255,0.96);}
+.fg textarea{resize:vertical;min-height:110px;}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.1em;border:1px solid var(--accent);border-radius:50px;cursor:pointer;transition:all var(--tr);box-shadow:0 0 20px rgba(193,232,255,0.3);}
+.submit-btn:hover{transform:translateY(-2px);background:linear-gradient(135deg,var(--accent-light),var(--accent));box-shadow:0 0 30px rgba(193,232,255,0.4);}
+.submit-btn:active,.submit-btn:focus-visible{transform:scale(.96);background:linear-gradient(135deg,var(--accent2),var(--accent));box-shadow:0 0 0 3px rgba(193,232,255,0.2);}
+
+/* ── SOCIAL BAR ── */
+.social-bar{background:rgba(5,38,89,0.85);border-top:1px solid rgba(193,232,255,0.12);border-bottom:1px solid rgba(193,232,255,0.12);padding:24px 6%;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+.social-lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(193,232,255,0.82);}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1.5px solid rgba(193,232,255,0.25);border-radius:50px;font-size:.76rem;font-weight:500;color:var(--accent);transition:all var(--tr);background:rgba(193,232,255,0.08);box-shadow:0 0 12px rgba(193,232,255,0.15);}
+.soc-btn:hover{background:rgba(193,232,255,0.15);border-color:var(--accent);box-shadow:0 0 20px rgba(193,232,255,0.25);}
+.soc-btn svg{width:16px;height:16px;fill:currentColor;}
+.soc-btn.wa{border-color:#25d366;background:#25d366;color:#fff;box-shadow:0 0 12px rgba(37,211,102,0.3);}
+.soc-btn.wa:hover{background:#128c7e;color:#fff;box-shadow:0 0 20px rgba(37,211,102,0.4);border-color:#25d366;}
+.soc-btn.ig{border-color:#c13584;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff;box-shadow:0 0 12px rgba(221,42,123,0.2);}
+.soc-btn.ig:hover{background:linear-gradient(135deg,#dd2a7b,#8134af,#515bd4);color:#fff;box-shadow:0 0 20px rgba(221,42,123,0.3);}
+.soc-btn.fb{border-color:#1877f2;background:linear-gradient(135deg,#1d6fe5,#0d4cb1);color:#fff;box-shadow:0 0 12px rgba(24,119,242,0.2);}
+.soc-btn.fb:hover{background:linear-gradient(135deg,#0d4cb1,#1877f2);color:#fff;box-shadow:0 0 20px rgba(24,119,242,0.3);}
+
+/* ── FOOTER ── */
+footer{background:linear-gradient(135deg, #021024 0%, #052659 30%, #5483B3 60%, #021024 100%);color:#FFFFFF;padding:60px 6% 0;border-top:1px solid rgba(193,232,255,0.2);box-shadow:0 -8px 32px rgba(193,232,255,0.12);}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(193,232,255,0.18);}
+.footer-brand{}
+.footer-logo{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:16px;text-shadow:var(--glow-accent);}
+.footer-brand p{font-size:.8rem;color:rgba(255,255,255,0.78);line-height:1.9;max-width:280px;margin-bottom:24px;}
+.footer-contact-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.footer-contact-btn{display:flex;align-items:center;gap:8px;padding:10px 20px;border:1.5px solid rgba(193,232,255,0.4);border-radius:50px;color:var(--accent);font-size:.74rem;font-weight:500;transition:all var(--tr);cursor:pointer;background:rgba(193,232,255,0.1);box-shadow:0 0 12px rgba(193,232,255,0.15);}
+.footer-contact-btn:hover{background:var(--accent);color:#021024;border-color:var(--accent);box-shadow:0 0 20px rgba(193,232,255,0.3);}
+.social-icons{display:flex;gap:10px;margin-top:20px;}
+.soc-circle{width:38px;height:38px;background:rgba(193,232,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--tr);border:1px solid rgba(193,232,255,0.3);box-shadow:0 0 12px rgba(193,232,255,0.15);}
+.soc-circle:hover{background:var(--accent);border-color:var(--accent);box-shadow:var(--glow-accent);}
+.soc-circle svg{width:16px;height:16px;fill:var(--accent);transition:fill var(--tr);}
+.soc-circle:hover svg{fill:#07111F;}
+.footer-col h4{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:rgba(193,232,255,0.85);margin-bottom:16px;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:.8rem;color:rgba(255,255,255,0.78);transition:all var(--tr);}
+.footer-col ul li a:hover{color:var(--accent);text-shadow:0 0 8px rgba(193,232,255,0.3);}
+.footer-acc-btn{display:none;width:100%;background:none;border:none;border-top:1px solid rgba(193,232,255,0.15);padding:16px 0;color:#FFFFFF;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:left;cursor:pointer;justify-content:space-between;align-items:center;}
+.footer-acc-content{display:block;}
+.footer-acc-content.hidden{display:none;}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid rgba(193,232,255,0.15);margin-top:16px;}
+.footer-bottom p{font-size:.72rem;color:rgba(255,255,255,0.62);}
+
+/* ── FLOATING WA ── */
+.float-wa{position:fixed;bottom:28px;right:28px;z-index:300;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.2);animation:wa-pulse 2.5s ease-in-out infinite;transition:transform var(--tr), background var(--tr);border:2px solid rgba(255,255,255,0.3);}
+.float-wa:hover{transform:scale(1.15);background:#128c7e;box-shadow:0 0 40px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.25);}
+.float-wa svg{width:26px;height:26px;fill:#fff;}
+@keyframes wa-pulse{0%,100%{box-shadow:0 0 30px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.2);}50%{box-shadow:0 0 30px rgba(37,211,102,0.4), 0 0 0 12px rgba(37,211,102,0.0);}}
+
+/* ── MODAL ── */
+.modal-bg{position:fixed;inset:0;z-index:500;background:rgba(84,131,179,0.45);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px;}
+.modal-bg.open{display:flex;}
+.modal-box{background:linear-gradient(135deg, rgba(5,38,89,0.92) 0%, rgba(84,131,179,0.88) 100%);border-radius:22px;max-width:500px;width:100%;overflow:hidden;position:relative;box-shadow:0 40px 80px rgba(193,232,255,0.25), inset 0 1px 1px rgba(193,232,255,0.2);animation:modal-in .25s ease;border:1px solid rgba(193,232,255,0.3);}
+@keyframes modal-in{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.modal-close{position:absolute;top:14px;right:14px;background:rgba(193,232,255,0.2);border:1px solid rgba(193,232,255,0.3);cursor:pointer;color:var(--accent);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;font-size:.9rem;transition:all var(--tr);box-shadow:0 0 12px rgba(193,232,255,0.15);}
+.modal-close:hover{background:rgba(193,232,255,0.4);border-color:var(--accent);box-shadow:0 0 20px rgba(193,232,255,0.25);}
+.modal-img{width:100%;height:260px;overflow:hidden;border:2px solid #052659;border-bottom:1px solid rgba(193,232,255,0.2);box-shadow:inset 0 0 0 1px rgba(193,232,255,0.15);}
+.modal-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9) contrast(1.1);}
+.modal-body{padding:26px 28px 30px;}
+.modal-badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(193,232,255,0.9);margin-bottom:6px;display:block;font-weight:700;}
+.modal-name{font-family:var(--serif);font-size:1.6rem;color:#FFFFFF;font-weight:700;margin-bottom:10px;text-shadow:0 0 15px rgba(193,232,255,0.15);}
+.modal-desc{font-size:.84rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:16px;}
+.modal-price{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--accent);margin-bottom:22px;text-shadow:0 0 12px rgba(193,232,255,0.25);}
+.modal-btns{display:flex;gap:10px;}
+.modal-btns a{flex:1;text-align:center;padding:13px;border-radius:50px;font-size:.76rem;font-weight:700;transition:all var(--tr);}
+.modal-btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021024;border:1px solid var(--accent);box-shadow:0 0 20px rgba(193,232,255,0.3);font-weight:700;}
+.modal-btn-primary:hover{background:linear-gradient(135deg,var(--accent-light),var(--accent));box-shadow:0 0 30px rgba(193,232,255,0.4);transform:translateY(-2px);}
+.modal-btn-secondary{border:1.5px solid rgba(193,232,255,0.4);color:var(--accent);background:transparent;box-shadow:0 0 12px rgba(193,232,255,0.15);}
+.modal-btn-secondary:hover{background:rgba(193,232,255,0.15);border-color:var(--accent);box-shadow:0 0 20px rgba(193,232,255,0.25);}
+
+/* ── ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .65s ease,transform .65s ease;}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{display:block;min-height:460px;}
+  .hero-left{min-height:85vh;padding:80px 6% 60px;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px;}
+  .mat-grid{grid-template-columns:repeat(2,1fr);}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+  .cat-card:nth-child(2),.cat-card:nth-child(4){margin-top:0;}
+  .about-section{grid-template-columns:1fr;}
+  .about-img-stack{height:360px;}
+  .process-timeline{grid-template-columns:repeat(2,1fr);gap:32px;}
+  .process-timeline::before{display:none;}
+  .customize-inner{grid-template-columns:1fr;}
+  .cust-imgs{display:none;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero{min-height:auto;}
+  .hero-right{display:block;min-height:360px;}
+  .hero-left{min-height:80vh;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .insta-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:20px;}
+  .insta-cell.feature{grid-column:span 2;grid-row:span 2;min-height:420px;}
+  .insta-cell.tall{grid-column:span 1;grid-row:span 2;min-height:420px;}
+  .insta-cell.wide{grid-column:span 2;grid-row:span 1;min-height:200px;}
+  .contact-inner{grid-template-columns:1fr;}
+  .promise-grid{grid-template-columns:1fr;gap:0;}
+  .prom-item{border-right:none;border-bottom:1px solid var(--silver);}
+  .prom-item:last-child{border-bottom:none;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-col{display:none;}
+  .footer-acc-btn{display:flex;}
+  .footer-acc-content.hidden{display:none;}
+  .footer-acc-content{display:block;}
+}
+@media(max-width:480px){
+  .products-grid{grid-template-columns:1fr;}
+  .hero-stats{gap:20px;}
+  .about-img-stack{height:280px;}
+  .form-row{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/919597124948?text=Hi%20Eternity%2C%20I%20want%20to%20customize%20a%20jewellery%20piece" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img"><img id="mImg" src="" alt="Product"/></div>
+    <div class="modal-body">
+      <span class="modal-badge" id="mBadge"></span>
+      <div class="modal-name" id="mName"></div>
+      <div class="modal-desc" id="mDesc"></div>
+      <div class="modal-price" id="mPrice"></div>
+      <div class="modal-btns">
+        <a href="https://wa.me/919597124948?text=I%20want%20to%20customize%20this%20design" target="_blank" class="modal-btn-primary">Customize Now ↗</a>
+        <a href="#contact" onclick="closeModal()" class="modal-btn-secondary">Enquire</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#catalogue" onclick="closeMob()">Catalogue</a>
+  <a href="#process" onclick="closeMob()">How It Works</a>
+  <a href="#customize" onclick="closeMob()">Customize</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">✦ <b>100% Custom Designs</b> &nbsp;·&nbsp; CAD Preview Before You Pay &nbsp;·&nbsp; Free Delivery Across India ✦</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">
+    <span>ETERNITY</span>
+    <span class="nav-logo-sub">ELEVATE THE ELEGANCE FOREVER</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#customize">Customize</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-icon-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start Custom</button>
+    <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Men's Fine Jewellery · Est. 2023</div>
+    <h1 class="hero-title">Crafted for<br>the Modern<br><em>King.</em></h1>
+    <p class="hero-sub">Bespoke rings & chains designed in CAD, approved by you, then built by hand. 100% custom. 100% yours. No two pieces alike.</p>
+    <div class="hero-btns">
+      <a href="#catalogue" class="btn-primary">Explore Collection</a>
+      <a href="https://wa.me/919597124948?text=Hi%20Eternity" target="_blank" class="btn-outline">WhatsApp Us</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-lbl">Custom Pieces</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-lbl">Bespoke</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2+</div>
+        <div class="hero-stat-lbl">Years</div>
+      </div>
+    </div>
+    <div class="hero-slide-dots" id="heroDots"></div>
+  </div>
+  <div class="hero-right" id="heroRight">
+    <img class="hero-right-img" id="heroRightImg" src="file:///C:/Users/santhosh/OneDrive/Desktop/HTML/1.jpg" alt="Luxury men's jewellery"/>
+    <div class="hero-right-overlay"></div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot"></span>Custom Men's Rings</span>
+    <span class="ticker-item"><span class="dot"></span>Gold Cuban Chains</span>
+    <span class="ticker-item"><span class="dot"></span>Diamond Jewellery</span>
+    <span class="ticker-item"><span class="dot"></span>CAD Preview</span>
+    <span class="ticker-item"><span class="dot"></span>Sterling Silver</span>
+    <span class="ticker-item"><span class="dot"></span>Free Delivery</span>
+    <span class="ticker-item"><span class="dot"></span>100% Bespoke</span>
+    <span class="ticker-item"><span class="dot"></span>Tiruchirappalli</span>
+    <span class="ticker-item"><span class="dot"></span>Custom Men's Rings</span>
+    <span class="ticker-item"><span class="dot"></span>Gold Cuban Chains</span>
+    <span class="ticker-item"><span class="dot"></span>Diamond Jewellery</span>
+    <span class="ticker-item"><span class="dot"></span>CAD Preview</span>
+    <span class="ticker-item"><span class="dot"></span>Sterling Silver</span>
+    <span class="ticker-item"><span class="dot"></span>Free Delivery</span>
+    <span class="ticker-item"><span class="dot"></span>100% Bespoke</span>
+    <span class="ticker-item"><span class="dot"></span>Tiruchirappalli</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="cat-section">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Browse</div>
+      <div class="section-title">Shop by Category</div>
+    </div>
+    <a href="#catalogue" class="section-link">View all <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card reveal" style="transition-delay:.05s" onclick="filterAndGo('ring')">
+      <img src="./file_00000000229c7208826c3fb018785eba.png" alt="Rings" loading="lazy"/>
+      <div class="cat-card-overlay"></div>
+      <div class="cat-card-body">
+        <div class="cat-card-tag"></div>
+        <div class="cat-card-name"></div>
+        <div class="cat-card-count">Earring</div>
+        <div class="cat-card-btn">Shop Now →</div>
+      </div>
+    </div>
+    <div class="cat-card reveal" style="transition-delay:.1s" onclick="filterAndGo('chain')">
+      <img src="./file_000000003d3c7208a2c5c5752eb875fe.png" alt="Chains" loading="lazy"/>
+      <div class="cat-card-overlay"></div>
+      <div class="cat-card-body">
+        <div class="cat-card-tag"></div>
+        <div class="cat-card-name"></div>
+        <div class="cat-card-count">Ring</div>
+        <div class="cat-card-btn">Shop Now →</div>
+      </div>
+    </div>
+    <div class="cat-card reveal" style="transition-delay:.15s" onclick="filterAndGo('bracelet')">
+      <img src="./file_0000000074807208b6c576410d488665.png" alt="Bracelets" loading="lazy"/>
+      <div class="cat-card-overlay"></div>
+      <div class="cat-card-body">
+        <div class="cat-card-tag"></div>
+        <div class="cat-card-name"></div>
+        <div class="cat-card-count">Necklace</div>
+        <div class="cat-card-btn">Shop Now →</div>
+      </div>
+    </div>
+    <div class="cat-card reveal" style="transition-delay:.2s" onclick="filterAndGo('all')">
+      <img src="./file_00000000f1bc72089f2bb200b6928e05.png" alt="Gold" loading="lazy"/>
+      <div class="cat-card-overlay"></div>
+      <div class="cat-card-body">
+        <div class="cat-card-tag"></div>
+        <div class="cat-card-name"></div>
+        <div class="cat-card-count">Ring</div>
+        <div class="cat-card-btn">Explore →</div>
+      </div>
+    </div>
+    <div class="cat-card reveal" style="transition-delay:.25s" onclick="filterAndGo('all')">
+      <img src="./file_00000000f5487208bdf675ee69e59b87.png" alt="Custom" loading="lazy"/>
+      <div class="cat-card-overlay"></div>
+      <div class="cat-card-body">
+        <div class="cat-card-tag"></div>
+        <div class="cat-card-name"></div>
+        <div class="cat-card-count">Bracelet</div>
+        <div class="cat-card-btn">Design Now →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue" class="catalogue-section">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Catalogue</div>
+      <div class="section-title" style="color:#052659 !important;text-shadow:none;">Our Signature Pieces</div>
+    </div>
+  </div>
+  <div class="filter-row reveal">
+    <button class="filt-btn active" onclick="filterProds('all',this)">All Pieces</button>
+    <button class="filt-btn" onclick="filterProds('ring',this)">Rings</button>
+    <button class="filt-btn" onclick="filterProds('chain',this)">Chains</button>
+    <button class="filt-btn" onclick="filterProds('bracelet',this)">Bracelets</button>
+  </div>
+  <div class="products-grid" id="prodGrid"></div>
+</section>
+
+<!-- COLLECTIONS SCROLL -->
+<section class="collections-section">
+  <div style="padding-right:6%">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Collections</div>
+        <div class="section-title">Our Design Universes</div>
+      </div>
+      <a href="#catalogue" class="section-link">View all <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+  <div class="collections-scroll">
+    <div class="coll-card reveal-scale">
+      <img src="sei.jpg.jpeg" alt="Sovereign Rings" loading="lazy"/>
+      <div class="coll-overlay"></div>
+      <div class="coll-body">
+        <div class="coll-tag"></div>
+        <div class="coll-name"></div>
+        <div class="coll-desc"></div>
+        <a href="#catalogue" class="coll-link">Shop Collection →</a>
+      </div>
+    </div>
+    <div class="coll-card reveal-scale" style="transition-delay:.08s">
+      <img src="aa.jpg.jpeg" alt="Gold Chains" loading="lazy"/>
+      <div class="coll-overlay"></div>
+      <div class="coll-body">
+        <div class="coll-tag"></div>
+        <div class="coll-name"></div>
+        <div class="coll-desc"></div>
+        <a href="#catalogue" class="coll-link">Shop Collection →</a>
+      </div>
+    </div>
+    <div class="coll-card reveal-scale" style="transition-delay:.16s">
+      <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=85&fit=crop" alt="Power Bracelets" loading="lazy"/>
+      <div class="coll-overlay"></div>
+      <div class="coll-body">
+        <div class="coll-tag"></div>
+        <div class="coll-name"></div>
+        <div class="coll-desc"></div>
+        <a href="#catalogue" class="coll-link">Shop Collection →</a>
+      </div>
+    </div>
+    <div class="coll-card reveal-scale" style="transition-delay:.24s">
+      <img src="bla.jpg.jpeg" alt="Blackout Edition" loading="lazy"/>
+      <div class="coll-overlay"></div>
+      <div class="coll-body">
+        <div class="coll-tag"></div>
+        <div class="coll-name"></div>
+        <div class="coll-desc"></div>
+        <a href="#catalogue" class="coll-link">Shop Collection →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap" style="margin-top:0;">
+  <div class="ticker-track">
+    <div class="ticker-item">✦ 100% Custom Designs <span class="dot"></span></div>
+    <div class="ticker-item">✦ CAD Preview Before You Pay <span class="dot"></span></div>
+    <div class="ticker-item">✦ Free Delivery Across India <span class="dot"></span></div>
+    <div class="ticker-item">✦ Tailored Rings & Chains <span class="dot"></span></div>
+    <div class="ticker-item">✦ 100% Custom Designs <span class="dot"></span></div>
+    <div class="ticker-item">✦ CAD Preview Before You Pay <span class="dot"></span></div>
+    <div class="ticker-item">✦ Free Delivery Across India <span class="dot"></span></div>
+    <div class="ticker-item">✦ Tailored Rings & Chains <span class="dot"></span></div>
+  </div>
+</div>
+
+<!-- CUSTOMIZE BANNER -->
+<div id="customize" class="customize-section">
+  <div class="customize-inner">
+    <div class="customize-text">
+      <div class="section-label">Your Vision</div>
+      <div class="section-title" style="color:#fff">Nothing Off the Shelf.<br><em style="font-style:italic;color:#fff">Everything for You.</em></div>
+      <p style="color:#fff;">Share your idea, get a CAD preview, then we build it only after you approve. Eternity specialises in 100% custom men's jewellery.</p>
+      <div class="hero-btns" style="margin-bottom:0;">
+        <a href="https://wa.me/919597124948?text=I%20want%20to%20start%20a%20custom%20design" target="_blank" class="btn-primary">Start on WhatsApp</a>
+        <a href="#contact" class="btn-outline">Send Enquiry</a>
+      </div>
+      <div class="cust-steps" style="margin-top:32px;">
+        <div class="cust-step reveal">
+          <div class="cust-num">01</div>
+          <div class="cust-step-info">
+            <div class="cust-step-title">Share Your Vision</div>
+            <div class="cust-step-desc">Tell us style, metal, stones, occasion.</div>
+          </div>
+        </div>
+        <div class="cust-step reveal" style="transition-delay:.08s">
+          <div class="cust-num">02</div>
+          <div class="cust-step-info">
+            <div class="cust-step-title">CAD Design Preview</div>
+            <div class="cust-step-desc">We create a 3D render for your review.</div>
+          </div>
+        </div>
+        <div class="cust-step reveal" style="transition-delay:.16s">
+          <div class="cust-num">03</div>
+          <div class="cust-step-info">
+            <div class="cust-step-title">Your Approval</div>
+            <div class="cust-step-desc">We refine until you're 100% happy.</div>
+          </div>
+        </div>
+        <div class="cust-step reveal" style="transition-delay:.24s">
+          <div class="cust-num">04</div>
+          <div class="cust-step-info">
+            <div class="cust-step-title">Crafted & Delivered</div>
+            <div class="cust-step-desc">Your one-of-a-kind piece arrives at your door.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cust-imgs">
+      <div class="cust-img-card" style="height:100%">
+        <img src="cad.jpg.png" alt="CAD Design" loading="lazy"/>
+        <div class="cust-img-label">CAD Preview</div>
+      </div>
+      <div class="cust-img-card" style="height:180px">
+        <img src="final.jpg.png" alt="Ring" loading="lazy"/>
+        <div class="cust-img-label">Final Piece</div>
+      </div>
+      <div class="cust-img-card" style="height:180px">
+        <img src="dev.jpg.png" alt="Chain" loading="lazy"/>
+        <div class="cust-img-label">Delivered</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MATERIALS -->
+<section class="materials-section">
+  <div class="section-header reveal" style="margin-bottom:28px;">
+    <div>
+      <div class="section-label" style="color:#052659 !important;">Materials</div>
+      <div class="section-title" style="color:#052659 !important;text-shadow:none;">Alchemy of Metals</div>
+    </div>
+  </div>
+  <div class="mat-grid">
+    <div class="mat-card reveal" style="transition-delay:.05s">
+      <img src="gold.jpg.jpeg" alt="Yellow Gold" loading="lazy"/>
+      <div class="mat-overlay"></div>
+      <div class="mat-name">Yellow Gold</div>
+      <div class="mat-sub"></div>
+    </div>
+    <div class="mat-card reveal" style="transition-delay:.1s">
+      <img src="sli.jpg.jpeg" alt="Sterling Silver" loading="lazy"/>
+      <div class="mat-overlay"></div>
+      <div class="mat-name">Sterling Silver</div>
+      <div class="mat-sub"></div>
+    </div>
+    <div class="mat-card reveal" style="transition-delay:.15s">
+      <img src="dim.jpg.jpeg" alt="Diamond" loading="lazy"/>
+      <div class="mat-overlay"></div>
+      <div class="mat-name">Diamond</div>
+      <div class="mat-sub"></div>
+    </div>
+    <div class="mat-card reveal" style="transition-delay:.2s">
+      <img src="ros.jpg.jpeg" alt="Rose Gold" loading="lazy"/>
+      <div class="mat-overlay"></div>
+      <div class="mat-name">Rose Gold</div>
+      <div class="mat-sub"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-section">
+  <div style="text-align:center;margin-bottom:0">
+    <div class="section-label reveal" style="text-align:center">The Journey</div>
+    <div class="section-title reveal" style="text-align:center">How It Works</div>
+    <p class="reveal" style="font-size:.85rem;color:var(--text);text-align:center;max-width:480px;margin:12px auto 0;line-height:1.8;">From your idea to your hand in 4 simple steps</p>
+  </div>
+  <div class="process-timeline">
+    <div class="proc-step reveal" style="transition-delay:.05s">
+      <div class="proc-icon-wrap">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=75&fit=crop" alt="Share Vision" loading="lazy"/>
+        <div class="proc-num-badge">1</div>
+      </div>
+      <div class="proc-title">Share Your Vision</div>
+      <p class="proc-desc">Tell us what you have in mind — style, metal, stones, occasion.</p>
+    </div>
+    <div class="proc-step reveal" style="transition-delay:.12s">
+      <div class="proc-icon-wrap">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=300&q=75&fit=crop" alt="CAD Design" loading="lazy"/>
+        <div class="proc-num-badge">2</div>
+      </div>
+      <div class="proc-title">CAD Design Preview</div>
+      <p class="proc-desc">We create a detailed 3D render. See exactly what you'll get.</p>
+    </div>
+    <div class="proc-step reveal" style="transition-delay:.19s">
+      <div class="proc-icon-wrap">
+        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&q=75&fit=crop" alt="Approval" loading="lazy"/>
+        <div class="proc-num-badge">3</div>
+      </div>
+      <div class="proc-title">Your Approval</div>
+      <p class="proc-desc">Review, revise, refine — we start only when you say go.</p>
+    </div>
+    <div class="proc-step reveal" style="transition-delay:.26s">
+      <div class="proc-icon-wrap">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300&q=75&fit=crop" alt="Deliver" loading="lazy"/>
+        <div class="proc-num-badge">4</div>
+      </div>
+      <div class="proc-title">Crafted & Delivered</div>
+      <p class="proc-desc">Your one-of-a-kind piece arrives safely at your door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE STRIP -->
+<div class="promise-strip">
+  <div class="promise-grid">
+    <div class="prom-item reveal">
+      <div class="prom-icon">🎨</div>
+      <div>
+        <div class="prom-title">CAD Preview Guarantee</div>
+        <div class="prom-desc">See your design before we cast anything</div>
+      </div>
+    </div>
+    <div class="prom-item reveal" style="transition-delay:.08s">
+      <div class="prom-icon">💎</div>
+      <div>
+        <div class="prom-title">Certified Materials Only</div>
+        <div class="prom-desc">Hallmarked gold, certified diamonds</div>
+      </div>
+    </div>
+    <div class="prom-item reveal" style="transition-delay:.16s">
+      <div class="prom-icon">🚚</div>
+      <div>
+        <div class="prom-title">Free Delivery All India</div>
+        <div class="prom-desc">Insured shipping, no extra charges</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-img-stack reveal-left">
+    <div class="about-img-main">
+      <img src="ajay.jpg.png" alt="Ajay Krishna" loading="lazy"/>
+    </div>
+    <div class="about-img-secondary">
+      <img src="ki.jpg.jpeg" alt="Jewellery" loading="lazy"/>
+    </div>
+    <div class="about-founder-tag">
+      <div class="aft-name">Ajay Krishna</div>
+      <div class="aft-role">Founder & Chief Designer</div>
+    </div>
+  </div>
+  <div class="about-text reveal-right">
+    <div class="section-label">Our Story</div>
+    <div class="section-title" style="color:#052659 !important;text-shadow:none;">Where Mastery<br>Meets Metal</div>
+    <p style="margin-top:20px">Eternity was born from a simple belief: every man deserves jewellery as unique as his story. We design and craft exclusive rings and chains for men — no mass production, no compromises.</p>
+    <p>From the first sketch in CAD to the final polish, nothing leaves our bench without your approval. We specialise in pieces that command presence and carry personal meaning.</p>
+    <p>Based in Tiruchirappalli, Tamil Nadu, we serve clients across India with the same personal touch every time.</p>
+    <div class="about-stats">
+      <div>
+        <div class="about-stat-num">500+</div>
+        <div class="about-stat-lbl">Custom Pieces</div>
+      </div>
+      <div>
+        <div class="about-stat-num">100%</div>
+        <div class="about-stat-lbl">Bespoke</div>
+      </div>
+      <div>
+        <div class="about-stat-num">2+</div>
+        <div class="about-stat-lbl">Years</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM GRID -->
+<section class="insta-section">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">#EternityJewels</div>
+      <div class="section-title">We're Making Rings</div>
+    </div>
+    <a href="https://www.instagram.com/eternity.gem?igsh=dm52NnlzZWdkOHZz" target="_blank" class="section-link">Follow us <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="insta-grid">
+    <div class="insta-cell feature reveal" style="transition-delay:.02s">
+      <img src="https://images.unsplash.com/photo-1573408301185-9519f94afef5?w=900&q=85&fit=crop" alt="Gold chain" loading="lazy"/>
+      <div class="insta-overlay"><span>#CHAIN</span></div>
+    </div>
+    <div class="insta-cell tall reveal" style="transition-delay:.06s">
+      <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=75&fit=crop" alt="Ring" loading="lazy"/>
+      <div class="insta-overlay"><span>#RING</span></div>
+    </div>
+    <div class="insta-cell reveal" style="transition-delay:.1s">
+      <img src="https://images.unsplash.com/photo-1603255182586-01b9e7f3c8a7?w=500&q=80&fit=crop" alt="Rose Gold" loading="lazy"/>
+      <div class="insta-overlay"><span>#ROSEGOLD</span></div>
+    </div>
+    <div class="insta-cell reveal" style="transition-delay:.14s">
+      <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=75&fit=crop" alt="Blackout" loading="lazy"/>
+      <div class="insta-overlay"><span>#BLACKOUT</span></div>
+    </div>
+    <div class="insta-cell wide reveal" style="transition-delay:.18s">
+      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=700&q=75&fit=crop" alt="Diamond" loading="lazy"/>
+      <div class="insta-overlay"><span>#DIAMOND</span></div>
+    </div>
+    <div class="insta-cell wide reveal" style="transition-delay:.22s">
+      <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=75&fit=crop" alt="Gold" loading="lazy"/>
+      <div class="insta-overlay"><span>#GOLD</span></div>
+    </div>
+    <div class="insta-cell tall reveal" style="transition-delay:.26s">
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80&fit=crop" alt="Custom CAD" loading="lazy"/>
+      <div class="insta-overlay"><span>#CUSTOM</span></div>
+    </div>
+    <div class="insta-cell reveal" style="transition-delay:.3s">
+      <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=75&fit=crop" alt="Cuff" loading="lazy"/>
+      <div class="insta-overlay"><span>#CUFF</span></div>
+    </div>
+    <div class="insta-cell reveal" style="transition-delay:.34s">
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500&q=80&fit=crop" alt="Custom Detail" loading="lazy"/>
+      <div class="insta-overlay"><span>#DETAIL</span></div>
+    </div>
+    <div class="insta-cell wide reveal" style="transition-delay:.38s">
+      <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=75&fit=crop" alt="Luxury Jewelry" loading="lazy"/>
+      <div class="insta-overlay"><span>#LUXE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-label reveal" style="text-align:center">Get in Touch</div>
+  <div class="section-title reveal" style="text-align:center;margin-bottom:48px;color:#052659 !important;text-shadow:none;">Begin Your Custom Journey</div>
+  <div class="contact-inner">
+    <div class="contact-info reveal-left">
+      <p>Whether you have a precise design in mind or just a feeling you can't put into words, we'll help you bring it to life.</p>
+      <div class="contact-detail">
+        <div class="ci-icon">📍</div>
+        <div><div class="ci-label">Location</div><div class="ci-val">Tiruchirappalli, Tamil Nadu, India</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ci-icon">📱</div>
+        <div><div class="ci-label">WhatsApp</div><div class="ci-val">+91 95971 24948</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ci-icon">✉️</div>
+        <div><div class="ci-label">Email</div><div class="ci-val">hello@eternityjewels.in</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ci-icon">🕐</div>
+        <div><div class="ci-label">Hours</div><div class="ci-val">Mon – Sat · 10 AM – 7 PM IST</div></div>
+      </div>
+    </div>
+    <form class="contact-form reveal-right" onsubmit="handleForm(event)">
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Rahul" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Kumar" required></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="rahul@email.com" required></div>
+      <div class="fg"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+      <div class="fg">
+        <label>Interested In</label>
+        <select>
+          <option value="">Select a product type</option>
+          <option>Custom Ring</option>
+          <option>Custom Chain / Necklace</option>
+          <option>Custom Bracelet</option>
+          <option>Custom Pendant</option>
+          <option>Full Set</option>
+          <option>Something Unique</option>
+        </select>
+      </div>
+      <div class="fg"><label>Describe Your Dream Piece</label><textarea placeholder="Style, metal, stones, budget, occasion..."></textarea></div>
+      <button type="submit" class="submit-btn">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <span class="social-lbl">Follow & Connect</span>
+  <a href="https://wa.me/919597124948" target="_blank" class="soc-btn wa">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+  <a href="https://www.instagram.com/eternity.gem?igsh=dm52NnlzZWdkOHZz" target="_blank" class="soc-btn ig">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    Instagram
+  </a>
+  <a href="https://facebook.com/eternityjewels" target="_blank" class="soc-btn fb">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Facebook
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">ETERNITY</div>
+      <p>Fine men's jewellery crafted entirely to order. Every ring, every chain — designed first in CAD, approved by you, then brought to life in Tiruchirappalli, Tamil Nadu.</p>
+      <div class="footer-contact-btns">
+        <button class="footer-contact-btn" onclick="window.location.href='tel:+919597124948'">📞 Call Us</button>
+        <button class="footer-contact-btn" onclick="window.location.href='mailto:hello@eternityjewels.in'">✉️ Write to Us</button>
+      </div>
+      <div class="social-icons">
+        <a href="https://facebook.com/eternityjewels" target="_blank" class="soc-circle"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/eternity.gem?igsh=dm52NnlzZWdkOHZz" target="_blank" class="soc-circle"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://wa.me/919597124948" target="_blank" class="soc-circle"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#customize">Customize</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Custom Rings</a></li>
+        <li><a href="#">Gold Chains</a></li>
+        <li><a href="#">Silver Bands</a></li>
+        <li><a href="#">Bracelets</a></li>
+        <li><a href="#">Pendants</a></li>
+        <li><a href="#">Diamond Jewellery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="#">Custom Order Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <button class="footer-acc-btn" onclick="toggleAcc(this)">Customer Delight <span>▾</span></button>
+  <div class="footer-acc-content hidden"><ul style="padding:10px 0 16px;"><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Free Design Revisions</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">CAD Preview Guarantee</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">WhatsApp Support</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Secure Payment</li></ul></div>
+  <button class="footer-acc-btn" onclick="toggleAcc(this)">Policies <span>▾</span></button>
+  <div class="footer-acc-content hidden"><ul style="padding:10px 0 16px;"><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Custom Order Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Refund Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Privacy Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Shipping Info</li></ul></div>
+  <div class="footer-bottom">
+    <p>© 2025 Eternity Fine Jewellery · All rights reserved</p>
+    <p>Crafted with ♦ in Tiruchirappalli, India</p>
+  </div>
+</footer>
+
+<script>
+/* PRODUCT DATA */
+const prods=[
+  {id:1,cat:'ring',img:'ring1.jpg.png',mat:'Gold · 22K',badge:'hot',badgeText:'Bestseller',name:'Sovereign Signet Ring',desc:'Bold flat-top signet in 22K gold with hand-engraved crest motif. The ring for the man who commands every room.',price:'₹28,000',orig:'₹34,000'},
+  {id:2,cat:'chain',img:'chain.1jpg.jpeg',mat:'Gold · 18K',badge:'custom',badgeText:'Custom',name:'Emperor Cuban Chain',desc:'Thick Cuban link chain in 18K gold, 22 inches. Width and length fully customisable. Unmatched weight and presence.',price:'₹55,000',orig:''},
+  {id:3,cat:'ring',img:'ring2.jpg.png',mat:'Silver · 925',badge:'new',badgeText:'New Arrival',name:'Onyx Warrior Band',desc:'Sterling silver band set with deep black onyx, flanked by geometric engravings. Rugged masculinity refined.',price:'₹4,500',orig:'₹5,500'},
+  {id:4,cat:'chain',img:'chain2.jpg.jpeg',mat:'Silver · 925',badge:'custom',badgeText:'Custom',name:'Serpent Rope Chain',desc:'Twisted rope-style chain in oxidised sterling silver. The contrast finish gives depth rarely seen in silver.',price:'₹8,000',orig:''},
+  {id:5,cat:'ring',img:'ring3.jpg.png',mat:'Gold · 18K',badge:'limited',badgeText:'Limited',name:'Diamond Crown Ring',desc:'Cushion-cut diamond crown setting in 18K white gold. Everyday luxury for the discerning gentleman.',price:'₹65,000',orig:'₹72,000'},
+  {id:6,cat:'bracelet',img:'bra1.jpg.jpeg',mat:'Gold · 22K',badge:'custom',badgeText:'Custom',name:'Rajasthan Cuff',desc:'Wide open cuff bracelet inspired by royal Rajasthani motifs, hand-etched in 22K gold. A collector\'s piece.',price:'₹38,000',orig:''},
+  {id:7,cat:'ring',img:'ring4.jpg.png',mat:'Black Rhodium',badge:'hot',badgeText:'Exclusive',name:'Eclipse Blackout Ring',desc:'Black rhodium-plated silver ring with matte gunmetal finish. The anti-bling choice that still says everything.',price:'₹6,500',orig:'₹8,000'},
+  {id:8,cat:'chain',img:'chain3.jpg.jpeg',mat:'Gold · 24K',badge:'custom',badgeText:'Custom',name:'Solid Figaro Link',desc:'Classic Italian Figaro pattern in solid 24K gold. Three-and-one alternating links, fully polished. Timeless.',price:'₹72,000',orig:''},
+];
+
+/* Render products */
+function renderProds(filter='all'){
+  const list=filter==='all'?prods:prods.filter(p=>p.cat===filter);
+  const grid=document.getElementById('prodGrid');
+  grid.innerHTML=list.map((p,i)=>`
+    <div class="prod-card reveal" style="transition-delay:${i*0.06}s">
+      <div class="prod-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+        <div class="prod-quick">
+          <button class="prod-quick-btn" onclick="event.stopPropagation();window.open('https://wa.me/919597124948?text='+encodeURIComponent('Hello, I want to enquire about ${p.name}'),'_blank')">Enquire →</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  observeReveal();
+}
+
+function filterProds(cat,btn){
+  document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProds(cat);
+}
+
+function filterAndGo(cat){
+  const activeBtn=Array.from(document.querySelectorAll('.filt-btn')).find(b=>{
+    if(cat==='all') return b.textContent.includes('All');
+    return b.textContent.toLowerCase().includes(cat);
+  });
+  document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));
+  if(activeBtn) activeBtn.classList.add('active');
+  renderProds(cat);
+  document.getElementById('catalogue').scrollIntoView({behavior:'smooth'});
+}
+
+/* Hero slider */
+const heroSlides=[
+  {img:'file:///C:/Users/santhosh/OneDrive/Desktop/HTML/1.jpg',title:'Sovereign Signet Ring',price:'₹28,000'},
+  {img:'file:///C:/Users/santhosh/OneDrive/Desktop/HTML/2.jpg',title:'Emperor Cuban Chain',price:'₹55,000'},
+  {img:'file:///C:/Users/santhosh/OneDrive/Desktop/HTML/3.jpg',title:'Diamond Crown Ring',price:'₹65,000'},
+];
+let curSlide=0,slideTimer;
+function buildDots(){
+  const d=document.getElementById('heroDots');d.innerHTML='';
+  heroSlides.forEach((_,i)=>{
+    const dot=document.createElement('div');
+    dot.className='h-dot'+(i===0?' active':'');
+    dot.onclick=()=>goSlide(i);
+    d.appendChild(dot);
+  });
+}
+function goSlide(n){
+  curSlide=(n+heroSlides.length)%heroSlides.length;
+  const s=heroSlides[curSlide];
+  const img=document.getElementById('heroRightImg');
+  const nextImg=new Image();
+
+  img.style.transition='opacity 1.15s cubic-bezier(.22,1,.36,1)';
+  img.style.opacity='0';
+
+  nextImg.onload=()=>{
+    requestAnimationFrame(() => {
+      img.src=s.img;
+      img.style.opacity='1';
+    });
+  };
+  nextImg.src=s.img;
+
+  document.querySelectorAll('.h-dot').forEach((d,i)=>d.classList.toggle('active',i===curSlide));
+  clearInterval(slideTimer);
+  slideTimer=setInterval(()=>goSlide(curSlide+1),6500);
+}
+buildDots();slideTimer=setInterval(()=>goSlide(curSlide+1),6500);
+
+/* Modal */
+function openModal(id){
+  const p=prods.find(x=>x.id===id);
+  document.getElementById('mImg').src=p.img;
+  document.getElementById('mBadge').textContent=p.mat+' · '+p.badgeText;
+  document.getElementById('mName').textContent=p.name;
+  document.getElementById('mDesc').textContent=p.desc;
+  document.getElementById('mPrice').textContent=p.price;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+/* Mobile menu */
+function toggleMob(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobMenu').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mobMenu').classList.contains('open')?'hidden':'';
+}
+function closeMob(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mobMenu').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* Footer accordion */
+function toggleAcc(btn){
+  const content=btn.nextElementSibling;
+  content.classList.toggle('hidden');
+  btn.querySelector('span').textContent=content.classList.contains('hidden')?'▾':'▴';
+}
+
+/* Form */
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.submit-btn');
+  btn.textContent='Sent! We\'ll be in touch ✓';
+  btn.style.background='#2a7a3a';
+  setTimeout(()=>{btn.textContent='Send Enquiry →';btn.style.background='';e.target.reset();},3500);
+}
+
+/* Scroll reveal */
+function observeReveal(){
+  const els=document.querySelectorAll('.reveal:not(.visible),.reveal-left:not(.visible),.reveal-right:not(.visible),.reveal-scale:not(.visible)');
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        const delay=parseFloat(en.target.style.transitionDelay)||0;
+        setTimeout(()=>en.target.classList.add('visible'),delay*1000);
+        obs.unobserve(en.target);
+      }
+    });
+  },{threshold:.1});
+  els.forEach(el=>obs.observe(el));
+}
+
+renderProds();
+observeReveal();
+
+/* Nav scroll effect */
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('nav');
+  if(window.scrollY>60){
+    nav.style.background='rgba(255,255,255,0.96)';
+    nav.style.boxShadow='0 2px 28px rgba(0,0,0,0.1)';
+  }else{
+    nav.style.background='rgba(255,255,255,0.88)';
+    nav.style.boxShadow='0 2px 24px rgba(13,59,102,0.08)';
+  }
+},{ passive:true });
+</script>
+</body>
+</html>
