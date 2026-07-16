@@ -184,8 +184,8 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#128c7e !important;border-co
 .section-link:hover{color:var(--accent);text-shadow:var(--glow-accent);}
 .section-link svg{width:14px;height:14px;stroke:#FFFFFF;fill:none;stroke-width:2;transition:transform var(--tr), stroke var(--tr);}
 .section-link:hover svg{transform:translateX(3px);stroke:var(--accent);}
-.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:36px;}
-.cat-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;transform:translateY(0);transition:transform var(--tr), box-shadow var(--tr), border var(--tr);outline:2px solid rgba(193,232,255,0.3);outline-offset:4px;box-shadow:0 0 0 1px rgba(193,232,255,0.15), 0 0 20px rgba(193,232,255,0.15);border:1px solid rgba(193,232,255,0.25);}
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:32px;max-width:980px;margin:0 auto;align-items:center;justify-items:center;}
+.cat-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;transform:translateY(0);transition:transform var(--tr), box-shadow var(--tr), border var(--tr);outline:2px solid rgba(193,232,255,0.3);outline-offset:4px;box-shadow:0 0 0 1px rgba(193,232,255,0.15), 0 0 20px rgba(193,232,255,0.15);border:1px solid rgba(193,232,255,0.25);width:min(100%, 280px);}
 .cat-card:nth-child(2){margin-top:30px;}
 .cat-card:nth-child(4){margin-top:30px;}
 .cat-card:hover{transform:translateY(-12px);box-shadow:0 24px 48px rgba(193,232,255,0.3), 0 0 30px rgba(193,232,255,0.25);border-color:rgba(193,232,255,0.5);}
@@ -196,8 +196,7 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#128c7e !important;border-co
 .cat-card-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(193,232,255,0.9);margin-bottom:4px;font-weight:700;}
 .cat-card-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#FFFFFF;text-shadow:0 0 15px rgba(193,232,255,0.3);}
 .cat-card-count{font-size:.7rem;color:rgba(255,255,255,0.88);margin-top:4px;}
-.cat-card-btn{display:inline-flex;align-items:center;gap:4px;margin-top:10px;padding:6px 14px;background:rgba(193,232,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(193,232,255,0.4);border-radius:50px;color:var(--accent);font-size:.65rem;font-weight:600;letter-spacing:.06em;opacity:0;transform:translateY(6px);transition:opacity var(--tr), transform var(--tr), background var(--tr);box-shadow:0 0 12px rgba(193,232,255,0.2);}
-.cat-card:hover .cat-card-btn{opacity:1;transform:translateY(0);background:rgba(193,232,255,0.25);}
+.cat-card-btn{display:none !important;}
 
 /* ── CATALOGUE – Masonry feel ── */
 .catalogue-section{padding:70px 6%;background:linear-gradient(180deg, rgba(238,246,255,0.98) 0%, rgba(210,227,245,0.9) 35%, rgba(173,204,235,0.8) 65%, rgba(139,178,217,0.75) 100%);border-top:1px solid rgba(193,232,255,0.45);border-bottom:1px solid rgba(193,232,255,0.45);}
@@ -205,6 +204,11 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#128c7e !important;border-co
 .catalogue-section .section-title{color:rgba(2,16,36,0.95) !important;text-shadow:0 0 20px rgba(255,255,255,0.45);}
 .catalogue-section .section-link{color:rgba(2,16,36,0.75);}
 .catalogue-section .section-link:hover{color:rgba(84,131,179,0.95);text-shadow:0 0 10px rgba(84,131,179,0.18);}
+.catalogue-section .prod-material{color:rgba(2,16,36,0.65);}
+.catalogue-section .prod-name{color:rgba(2,16,36,0.95);text-shadow:none;}
+.catalogue-section .prod-desc{color:rgba(2,16,36,0.75);}
+.catalogue-section .prod-price{color:#052659;text-shadow:none;}
+.catalogue-section .prod-price s{color:rgba(2,16,36,0.55);} 
 .filter-row{display:flex;gap:8px;margin-bottom:36px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;}
 .filter-row::-webkit-scrollbar{display:none;}
 .filt-btn{padding:9px 24px;border:1.5px solid rgba(84,131,179,0.35);border-radius:50px;font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.08em;background:rgba(255,255,255,0.7);cursor:pointer;color:rgba(2,16,36,0.9);transition:all var(--tr);white-space:nowrap;flex-shrink:0;}
@@ -250,8 +254,7 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#128c7e !important;border-co
 .coll-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(193,232,255,0.92);margin-bottom:12px;}
 .coll-name{font-family:var(--serif);font-size:1.5rem;font-weight:800;color:#FFFFFF;margin-bottom:12px;text-shadow:0 0 22px rgba(193,232,255,0.22);}
 .coll-desc{font-size:.9rem;color:rgba(255,255,255,.85);line-height:1.9;margin-bottom:20px;max-width:92%;}
-.coll-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:.84rem;font-weight:800;letter-spacing:.1em;border-bottom:1px solid rgba(193,232,255,0.5);padding-bottom:2px;transition:all var(--tr);}
-.coll-link:hover{border-color:var(--accent);text-shadow:0 0 12px rgba(193,232,255,0.2);}
+.coll-link{display:none !important;}
 .coll-card::after{content:'';position:absolute;inset:0;background:transparent;pointer-events:none;}
 .coll-card:nth-child(1){grid-column:span 5;grid-row:span 2;aspect-ratio:3/4;}
 .coll-card:nth-child(2){grid-column:span 4;grid-row:span 1;}
@@ -326,10 +329,11 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#128c7e !important;border-co
 .about-founder-tag{position:absolute;top:24px;right:-10px;background:rgba(10,25,47,0.8);backdrop-filter:blur(12px);border:1px solid rgba(193,232,255,0.3);border-radius:12px;padding:12px 18px;box-shadow:0 8px 20px rgba(193,232,255,0.15);}
 .aft-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--accent);text-shadow:0 0 10px rgba(193,232,255,0.2);}
 .aft-role{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(193,232,255,0.8);}
-.about-text .section-title{margin-bottom:20px;color:#FFFFFF;text-shadow:0 0 20px rgba(193,232,255,0.2);}
-.about-text p{font-size:.86rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:16px;}
-.about-stats{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(193,232,255,0.2);}
-.about-stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--accent);text-shadow:0 0 15px rgba(193,232,255,0.25);}
+.about-text .section-title{margin-bottom:20px;color:rgba(2,16,36,0.95);text-shadow:none;}
+.about-text p{font-size:.86rem;color:rgba(2,16,36,0.78);line-height:1.9;margin-bottom:16px;}
+.about-stats{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(2,16,36,0.14);}
+.about-stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:#052659;text-shadow:none;}
+.about-stat-lbl{color:rgba(2,16,36,0.72);}
 .about-stat-lbl{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(193,232,255,0.8);margin-top:2px;}
 
 /* ── INSTAGRAM GRID ── */
@@ -703,16 +707,6 @@ footer{background:linear-gradient(135deg, #021024 0%, #052659 30%, #5483B3 60%, 
     <a href="#catalogue" class="section-link">View all <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
   <div class="cat-grid">
-    <div class="cat-card reveal" style="transition-delay:.05s" onclick="filterAndGo('ring')">
-      <img src="./file_00000000229c7208826c3fb018785eba.png" alt="Rings" loading="lazy"/>
-      <div class="cat-card-overlay"></div>
-      <div class="cat-card-body">
-        <div class="cat-card-tag"></div>
-        <div class="cat-card-name"></div>
-        <div class="cat-card-count">Earring</div>
-        <div class="cat-card-btn">Shop Now →</div>
-      </div>
-    </div>
     <div class="cat-card reveal" style="transition-delay:.1s" onclick="filterAndGo('chain')">
       <img src="./file_000000003d3c7208a2c5c5752eb875fe.png" alt="Chains" loading="lazy"/>
       <div class="cat-card-overlay"></div>
@@ -720,16 +714,6 @@ footer{background:linear-gradient(135deg, #021024 0%, #052659 30%, #5483B3 60%, 
         <div class="cat-card-tag"></div>
         <div class="cat-card-name"></div>
         <div class="cat-card-count">Ring</div>
-        <div class="cat-card-btn">Shop Now →</div>
-      </div>
-    </div>
-    <div class="cat-card reveal" style="transition-delay:.15s" onclick="filterAndGo('bracelet')">
-      <img src="./file_0000000074807208b6c576410d488665.png" alt="Bracelets" loading="lazy"/>
-      <div class="cat-card-overlay"></div>
-      <div class="cat-card-body">
-        <div class="cat-card-tag"></div>
-        <div class="cat-card-name"></div>
-        <div class="cat-card-count">Necklace</div>
         <div class="cat-card-btn">Shop Now →</div>
       </div>
     </div>
@@ -1214,21 +1198,10 @@ footer{background:linear-gradient(135deg, #021024 0%, #052659 30%, #5483B3 60%, 
         <li><a href="#">Diamond Jewellery</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="#">Custom Order Policy</a></li>
-        <li><a href="#">Refund Policy</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Shipping Info</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-      </ul>
     </div>
   </div>
   <button class="footer-acc-btn" onclick="toggleAcc(this)">Customer Delight <span>▾</span></button>
   <div class="footer-acc-content hidden"><ul style="padding:10px 0 16px;"><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Free Design Revisions</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">CAD Preview Guarantee</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">WhatsApp Support</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Secure Payment</li></ul></div>
-  <button class="footer-acc-btn" onclick="toggleAcc(this)">Policies <span>▾</span></button>
-  <div class="footer-acc-content hidden"><ul style="padding:10px 0 16px;"><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Custom Order Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Refund Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Privacy Policy</li><li style="padding:6px 0;font-size:.82rem;color:rgba(255,255,255,.6);">Shipping Info</li></ul></div>
   <div class="footer-bottom">
     <p>© 2025 Eternity Fine Jewellery · All rights reserved</p>
     <p>Crafted with ♦ in Tiruchirappalli, India</p>
@@ -1257,7 +1230,7 @@ function renderProds(filter='all'){
       <div class="prod-img">
         <img src="${p.img}" alt="${p.name}" loading="lazy"/>
         <div class="prod-quick">
-          <button class="prod-quick-btn" onclick="event.stopPropagation();window.open('https://wa.me/919597124948?text='+encodeURIComponent('Hello, I want to enquire about ${p.name}'),'_blank')">Enquire →</button>
+          <button class="prod-quick-btn" onclick="event.stopPropagation();window.open('https://wa.me/919597124948?text='+encodeURIComponent('Hello, I want to enquire about products'),'_blank')">Enquire →</button>
         </div>
       </div>
     </div>
