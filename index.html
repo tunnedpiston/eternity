@@ -193,11 +193,11 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#27ae60 !important;border-co
 .section-link:hover{color:var(--accent);text-shadow:var(--glow-accent);}
 .section-link svg{width:14px;height:14px;stroke:#FFFFFF;fill:none;stroke-width:2;transition:transform var(--tr), stroke var(--tr);}
 .section-link:hover svg{transform:translateX(3px);stroke:var(--accent);}
-.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:32px;max-width:980px;margin:0 auto;align-items:center;justify-items:center;}
-.cat-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;transform:translateY(0);transition:transform var(--tr), box-shadow var(--tr), border var(--tr);outline:2px solid rgba(255,255,255,0.3);outline-offset:4px;box-shadow:0 0 0 1px rgba(255,255,255,0.15), 0 0 20px rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);width:min(100%, 280px);}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,280px));gap:88px;max-width:980px;margin:0 auto;align-items:center;justify-content:center;}
+.cat-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;transform:translateY(0);transition:transform var(--tr), border var(--tr), outline-color var(--tr);outline:2px solid #ffffff;outline-offset:3px;box-shadow:0 0 0 1px rgba(255,255,255,0.95);border:1px solid #ffffff;width:min(100%, 280px);}
 .cat-card:nth-child(2){margin-top:30px;}
 .cat-card:nth-child(4){margin-top:30px;}
-.cat-card:hover{transform:translateY(-12px);box-shadow:0 24px 48px rgba(255,255,255,0.3), 0 0 30px rgba(255,255,255,0.25);border-color:rgba(255,255,255,0.5);}
+.cat-card:hover{transform:translateY(-6px);box-shadow:0 0 0 1px rgba(255,255,255,1), 0 0 18px rgba(255,255,255,0.35);border-color:#ffffff;outline-color:#ffffff;}
 .cat-card img{width:100%;height:100%;object-fit:cover;opacity:1;transition:transform .6s ease;filter:none;mix-blend-mode:normal;background-blend-mode:normal;image-rendering:auto;}
 .cat-card:hover img{transform:scale(1.08);filter:none;}
 .cat-card-overlay{position:absolute;inset:0;background:transparent;pointer-events:none;}
@@ -254,8 +254,8 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#27ae60 !important;border-co
 .collections-section{padding:70px 6% 90px;background:linear-gradient(180deg, #111111 0%, #171717 45%, #0b0b0b 100%);border-top:1px solid rgba(212,175,55,0.12);border-bottom:1px solid rgba(212,175,55,0.12);}
 .collections-scroll{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:26px;padding:0 6%;}
 .collections-scroll::-webkit-scrollbar{display:none;}
-.coll-card{border-radius:28px;overflow:hidden;position:relative;aspect-ratio:4/5;cursor:pointer;transition:transform var(--tr),box-shadow var(--tr);border:1px solid rgba(255,255,255,0.18);box-shadow:0 20px 60px rgba(255,255,255,0.14);background:transparent;}
-.coll-card:hover{transform:translateY(-10px);box-shadow:0 28px 80px rgba(255,255,255,0.28);}
+.coll-card{border-radius:28px;overflow:hidden;position:relative;aspect-ratio:4/5;cursor:pointer;transition:transform var(--tr), border var(--tr), box-shadow var(--tr);border:1px solid #ffffff;box-shadow:0 0 0 1px rgba(255,255,255,0.95);background:transparent;}
+.coll-card:hover{transform:translateY(-6px);box-shadow:0 0 0 1px rgba(255,255,255,1), 0 0 18px rgba(255,255,255,0.3);border-color:#ffffff;}
 .coll-card img{width:100%;height:100%;object-fit:cover;opacity:1;transition:transform .7s ease, filter .7s ease;filter:none;mix-blend-mode:normal;background-blend-mode:normal;image-rendering:auto;}
 .coll-card:hover img{transform:scale(1.08) rotate(0.5deg);filter:none;}
 .coll-overlay{position:absolute;inset:0;background:transparent;pointer-events:none;}
@@ -348,13 +348,13 @@ a[href*="wa.me"].modal-btn-primary:hover{background:#27ae60 !important;border-co
 /* ── INSTAGRAM GRID ── */
 .insta-section{padding:70px 6%;background:linear-gradient(180deg, #101010 0%, #1a1a1a 45%, #0b0b0b 100%);border-top:1px solid rgba(212,175,55,0.12);border-bottom:1px solid rgba(212,175,55,0.12);}
 .insta-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:240px;gap:32px;margin-top:32px;grid-auto-flow:dense;}
-.insta-cell{border-radius:24px;overflow:hidden;cursor:pointer;position:relative;min-height:240px;box-shadow:0 12px 40px rgba(255,255,255,0.2), inset 0 1px 1px rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);backdrop-filter:none;transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);}
+.insta-cell{border-radius:24px;overflow:hidden;cursor:pointer;position:relative;min-height:240px;box-shadow:0 0 0 1px rgba(255,255,255,0.95);border:1px solid #ffffff;backdrop-filter:none;transition:transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, box-shadow 0.4s ease;}
 .insta-cell::before{content:'';position:absolute;inset:0;background:transparent;pointer-events:none;z-index:1;}
 .insta-cell.feature{grid-column:span 3;grid-row:span 2;min-height:520px;}
 .insta-cell.tall{grid-column:span 1;grid-row:span 1;min-height:240px;}
 .insta-cell.wide{grid-column:span 2;grid-row:span 1;min-height:240px;}
 .insta-cell img{width:100%;height:100%;object-fit:cover;opacity:1;transition:transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.8s ease;filter:none;mix-blend-mode:normal;background-blend-mode:normal;image-rendering:auto;}
-.insta-cell:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(255,255,255,0.35), inset 0 1px 1px rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.4);}
+.insta-cell:hover{transform:translateY(-6px);box-shadow:0 0 0 1px rgba(255,255,255,1), 0 0 18px rgba(255,255,255,0.3);border-color:#ffffff;}
 .insta-cell:hover img{transform:scale(1.08) rotate(1deg);filter:none;}
 .insta-overlay{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 22px;background:transparent;display:flex;align-items:flex-end;justify-content:space-between;opacity:0;transition:opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);}
 .insta-cell:hover .insta-overlay{opacity:1;}
@@ -441,14 +441,14 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
 @keyframes wa-pulse{0%,100%{box-shadow:0 0 30px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.2);}50%{box-shadow:0 0 30px rgba(37,211,102,0.4), 0 0 0 12px rgba(37,211,102,0.0);}}
 
 /* ── MODAL ── */
-.modal-bg{position:fixed;inset:0;z-index:500;background:rgba(212,175,55,0.45);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px;}
+.modal-bg{position:fixed;inset:0;z-index:500;background:rgba(7,7,7,0.78);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:18px;}
 .modal-bg.open{display:flex;}
-.modal-box{background:linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(212,175,55,0.88) 100%);border-radius:22px;max-width:500px;width:100%;overflow:hidden;position:relative;box-shadow:0 40px 80px rgba(255,255,255,0.25), inset 0 1px 1px rgba(255,255,255,0.2);animation:modal-in .25s ease;border:1px solid rgba(255,255,255,0.3);}
+.modal-box{background:transparent;border-radius:16px;width:min(90vw, 560px);max-height:min(82vh, 560px);overflow:hidden;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,0.95), 0 0 24px rgba(255,255,255,0.18);animation:modal-in .25s ease;border:1px solid #ffffff;padding:0;display:flex;align-items:center;justify-content:center;}
 @keyframes modal-in{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
-.modal-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);cursor:pointer;color:var(--accent);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;font-size:.9rem;transition:all var(--tr);box-shadow:0 0 12px rgba(255,255,255,0.15);}
-.modal-close:hover{background:rgba(255,255,255,0.4);border-color:var(--accent);box-shadow:0 0 20px rgba(255,255,255,0.25);}
-.modal-img{width:100%;height:260px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.2);}
-.modal-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9) contrast(1.1);}
+.modal-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.12);border:1px solid #ffffff;cursor:pointer;color:#ffffff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;font-size:.85rem;transition:all var(--tr);box-shadow:none;}
+.modal-close:hover{background:rgba(255,255,255,0.22);border-color:#ffffff;box-shadow:none;}
+.modal-img{width:100%;max-width:520px;max-height:min(72vh, 500px);overflow:hidden;display:flex;align-items:center;justify-content:center;background:transparent;border-radius:16px;border:2px solid #ffffff;box-shadow:0 0 18px rgba(255,255,255,0.2);}
+.modal-img img{width:auto;height:auto;max-width:100%;max-height:min(72vh, 500px);object-fit:contain;object-position:center;filter:brightness(0.98) contrast(1.02);display:block;border-radius:16px;}
 .modal-body{padding:26px 28px 30px;}
 .modal-badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.92);margin-bottom:6px;display:block;font-weight:700;}
 .modal-name{font-family:var(--serif);font-size:1.6rem;color:#FFFFFF;font-weight:700;margin-bottom:10px;text-shadow:none;}
@@ -571,7 +571,9 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
   .footer-contact-btn{width:100%;justify-content:center;}
   .footer-bottom{padding:16px 0;flex-direction:column;align-items:flex-start;gap:6px;}
   .float-wa{width:56px;height:56px;bottom:18px;right:18px;}
-  .modal-box{width:min(100%,520px);}
+  .modal-box{width:min(90vw, 560px);max-height:76vh;}
+  .modal-img{max-height:min(68vh, 460px);}
+  .modal-img img{max-height:min(68vh, 460px);} 
   .modal-body{padding:20px 20px 24px;}
   .modal-btns{flex-direction:column;}
 }
@@ -622,16 +624,6 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-img"><img id="mImg" src="" alt="Product"/></div>
-    <div class="modal-body">
-      <span class="modal-badge" id="mBadge"></span>
-      <div class="modal-name" id="mName"></div>
-      <div class="modal-desc" id="mDesc"></div>
-      <div class="modal-price" id="mPrice"></div>
-      <div class="modal-btns">
-        <a href="https://wa.me/919597124948?text=I%20want%20to%20customize%20this%20design" target="_blank" class="modal-btn-primary">Customize Now ↗</a>
-        <a href="#contact" onclick="closeModal()" class="modal-btn-secondary">Enquire</a>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -732,16 +724,6 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
         <div class="cat-card-btn">Shop Now →</div>
       </div>
     </div>
-    <div class="cat-card reveal" style="transition-delay:.2s" onclick="filterAndGo('all')">
-      <img src="./file_00000000f1bc72089f2bb200b6928e05.png" alt="Gold" loading="lazy"/>
-      <div class="cat-card-overlay"></div>
-      <div class="cat-card-body">
-        <div class="cat-card-tag"></div>
-        <div class="cat-card-name"></div>
-        <div class="cat-card-count">Ring</div>
-        <div class="cat-card-btn">Explore →</div>
-      </div>
-    </div>
     <div class="cat-card reveal" style="transition-delay:.25s" onclick="filterAndGo('all')">
       <img src="./file_00000000f5487208bdf675ee69e59b87.png" alt="Custom" loading="lazy"/>
       <div class="cat-card-overlay"></div>
@@ -776,7 +758,7 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
 <section class="collections-section">
   <div style="padding-right:6%">
     <div class="section-header reveal">
-      <div>
+      <div class="collections-trigger" data-image="aa.jpg.jpeg" tabindex="0" role="button" aria-label="Open collections preview" style="cursor:pointer;">
         <div class="section-label">Collections</div>
         <div class="section-title">Our Design Universes</div>
       </div>
@@ -784,8 +766,8 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
     </div>
   </div>
   <div class="collections-scroll">
-    <div class="coll-card reveal-scale">
-      <img src="sei.jpg.jpeg" alt="Sovereign Rings" loading="lazy"/>
+    <div class="coll-card reveal-scale" style="transition-delay:.08s" data-image="aa.jpg.jpeg">
+      <img src="aa.jpg.jpeg" alt="Gold Chains" loading="lazy" style="cursor:pointer;" onclick="openModalFromCollection('aa.jpg.jpeg')" tabindex="0" role="button" aria-label="Open collection image preview"/>
       <div class="coll-overlay"></div>
       <div class="coll-body">
         <div class="coll-tag"></div>
@@ -794,8 +776,8 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
         <a href="#catalogue" class="coll-link">Shop Collection →</a>
       </div>
     </div>
-    <div class="coll-card reveal-scale" style="transition-delay:.08s">
-      <img src="aa.jpg.jpeg" alt="Gold Chains" loading="lazy"/>
+    <div class="coll-card reveal-scale" style="transition-delay:.16s" data-image="ges.jpg.jpeg">
+      <img src="ges.jpg.jpeg" loading="lazy" style="cursor:pointer;" onclick="openModalFromCollection('ges.jpg.jpeg')" tabindex="0" role="button" aria-label="Open collection image preview"/>
       <div class="coll-overlay"></div>
       <div class="coll-body">
         <div class="coll-tag"></div>
@@ -804,18 +786,8 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
         <a href="#catalogue" class="coll-link">Shop Collection →</a>
       </div>
     </div>
-    <div class="coll-card reveal-scale" style="transition-delay:.16s">
-      <img src="ges.jpg.jpeg" loading="lazy"/>
-      <div class="coll-overlay"></div>
-      <div class="coll-body">
-        <div class="coll-tag"></div>
-        <div class="coll-name"></div>
-        <div class="coll-desc"></div>
-        <a href="#catalogue" class="coll-link">Shop Collection →</a>
-      </div>
-    </div>
-    <div class="coll-card reveal-scale" style="transition-delay:.24s">
-      <img src="bla.jpg.jpeg" alt="Blackout Edition" loading="lazy"/>
+    <div class="coll-card reveal-scale" style="transition-delay:.24s" data-image="bla.jpg.jpeg">
+      <img src="bla.jpg.jpeg" alt="Blackout Edition" loading="lazy" style="cursor:pointer;" onclick="openModalFromCollection('bla.jpg.jpeg')" tabindex="0" role="button" aria-label="Open collection image preview"/>
       <div class="coll-overlay"></div>
       <div class="coll-body">
         <div class="coll-tag"></div>
@@ -1052,40 +1024,40 @@ footer{background:linear-gradient(135deg, #0e0e0e 0%, #171717 30%, #111111 60%, 
     <a href="bluri.jpg.jpeg" target="_blank" class="section-link" style="color:#d4af37;">Follow us <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
   <div class="insta-grid">
-    <div class="insta-cell tall reveal" style="transition-delay:.06s">
-      <img src="cheia.jpg.jpeg" alt="Ring" loading="lazy"/>
+    <div class="insta-cell tall reveal" style="transition-delay:.06s" data-image="cheia.jpg.jpeg">
+      <img src="cheia.jpg.jpeg" alt="Ring" loading="lazy" onclick="openModalFromCollection('cheia.jpg.jpeg')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#RING</span></div>
     </div>
-    <div class="insta-cell reveal" style="transition-delay:.1s">
-      <img src="raue.jpg.png" alt="Rose Gold" loading="lazy"/>
+    <div class="insta-cell reveal" style="transition-delay:.1s" data-image="raue.jpg.png">
+      <img src="raue.jpg.png" alt="Rose Gold" loading="lazy" onclick="openModalFromCollection('raue.jpg.png')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#ROSEGOLD</span></div>
     </div>
-    <div class="insta-cell reveal" style="transition-delay:.14s">
-      <img src="ear.jpg.png" alt="Blackout" loading="lazy"/>
+    <div class="insta-cell reveal" style="transition-delay:.14s" data-image="ear.jpg.png">
+      <img src="ear.jpg.png" alt="Blackout" loading="lazy" onclick="openModalFromCollection('ear.jpg.png')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#BLACKOUT</span></div>
     </div>
-    <div class="insta-cell wide reveal" style="transition-delay:.18s">
-      <img src="bluri.jpg.jpeg" alt="Diamond" loading="lazy"/>
+    <div class="insta-cell wide reveal" style="transition-delay:.18s" data-image="bluri.jpg.jpeg">
+      <img src="bluri.jpg.jpeg" alt="Diamond" loading="lazy" onclick="openModalFromCollection('bluri.jpg.jpeg')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#DIAMOND</span></div>
     </div>
-    <div class="insta-cell wide reveal" style="transition-delay:.22s">
-      <img src="tydgcv.jpg.jpeg" alt="Gold" loading="lazy"/>
+    <div class="insta-cell wide reveal" style="transition-delay:.22s" data-image="tydgcv.jpg.jpeg">
+      <img src="tydgcv.jpg.jpeg" alt="Gold" loading="lazy" onclick="openModalFromCollection('tydgcv.jpg.jpeg')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#GOLD</span></div>
     </div>
-    <div class="insta-cell tall reveal" style="transition-delay:.26s">
-      <img src="tydhg.jpg.png" alt="Custom CAD" loading="lazy"/>
+    <div class="insta-cell tall reveal" style="transition-delay:.26s" data-image="tydhg.jpg.png">
+      <img src="tydhg.jpg.png" alt="Custom CAD" loading="lazy" onclick="openModalFromCollection('tydhg.jpg.png')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#CUSTOM</span></div>
     </div>
-    <div class="insta-cell reveal" style="transition-delay:.3s">
-      <img src="wrewsdfyg.jpg.png" alt="Cuff" loading="lazy"/>
+    <div class="insta-cell reveal" style="transition-delay:.3s" data-image="wrewsdfyg.jpg.png">
+      <img src="wrewsdfyg.jpg.png" alt="Cuff" loading="lazy" onclick="openModalFromCollection('wrewsdfyg.jpg.png')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#CUFF</span></div>
     </div>
-    <div class="insta-cell reveal" style="transition-delay:.34s">
-      <img src="nvtygf.jpg.jpeg" alt="Custom Detail" loading="lazy"/>
+    <div class="insta-cell reveal" style="transition-delay:.34s" data-image="nvtygf.jpg.jpeg">
+      <img src="nvtygf.jpg.jpeg" alt="Custom Detail" loading="lazy" onclick="openModalFromCollection('nvtygf.jpg.jpeg')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#DETAIL</span></div>
     </div>
-    <div class="insta-cell wide reveal" style="transition-delay:.38s">
-      <img src="kiyfkgtv.jpg.jpeg" alt="Luxury Jewelry" loading="lazy"/>
+    <div class="insta-cell wide reveal" style="transition-delay:.38s" data-image="kiyfkgtv.jpg.jpeg">
+      <img src="kiyfkgtv.jpg.jpeg" alt="Luxury Jewelry" loading="lazy" onclick="openModalFromCollection('kiyfkgtv.jpg.jpeg')" tabindex="0" role="button" aria-label="Open image preview"/>
       <div class="insta-overlay"><span>#LUXE</span></div>
     </div>
   </div>
@@ -1241,7 +1213,7 @@ function renderProds(filter='all'){
   const list=filter==='all'?prods:prods.filter(p=>p.cat===filter);
   const grid=document.getElementById('prodGrid');
   grid.innerHTML=list.map((p,i)=>`
-    <div class="prod-card reveal" style="transition-delay:${i*0.06}s">
+    <div class="prod-card reveal" style="transition-delay:${i*0.06}s" onclick="openModal(${p.id})">
       <div class="prod-img">
         <img src="${p.img}" alt="${p.name}" loading="lazy"/>
         <div class="prod-quick">
@@ -1273,7 +1245,6 @@ function filterAndGo(cat){
 /* Hero slider */
 const heroSlides=[
   {img:'./1.jpg',title:'Sovereign Signet Ring',price:'₹28,000'},
-  {img:'./2.jpg',title:'Emperor Cuban Chain',price:'₹55,000'},
   {img:'./3.jpg',title:'Diamond Crown Ring',price:'₹65,000'},
 ];
 let curSlide=0,slideTimer;
@@ -1310,13 +1281,34 @@ function goSlide(n){
 buildDots();slideTimer=setInterval(()=>goSlide(curSlide+1),6500);
 
 /* Modal */
+function setCompactModalSize(){
+  const modal=document.getElementById('modal');
+  const box=modal.querySelector('.modal-box');
+  const wrap=modal.querySelector('.modal-img');
+  const img=document.getElementById('mImg');
+  if(box){
+    box.style.width='min(90vw, 560px)';
+    box.style.maxHeight='min(82vh, 560px)';
+  }
+  if(wrap){
+    wrap.style.maxWidth='520px';
+    wrap.style.maxHeight='min(72vh, 500px)';
+  }
+  if(img){
+    img.style.maxWidth='100%';
+    img.style.maxHeight='min(72vh, 500px)';
+  }
+}
 function openModal(id){
   const p=prods.find(x=>x.id===id);
   document.getElementById('mImg').src=p.img;
-  document.getElementById('mBadge').textContent=p.mat+' · '+p.badgeText;
-  document.getElementById('mName').textContent=p.name;
-  document.getElementById('mDesc').textContent=p.desc;
-  document.getElementById('mPrice').textContent=p.price;
+  setCompactModalSize();
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function openModalFromCollection(img){
+  document.getElementById('mImg').src=img;
+  setCompactModalSize();
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -1324,6 +1316,51 @@ function closeModal(){
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
 }
+document.querySelectorAll('.collections-trigger').forEach((trigger)=>{
+  trigger.addEventListener('click',()=>{
+    openModalFromCollection(trigger.dataset.image || 'aa.jpg.jpeg');
+  });
+  trigger.addEventListener('keydown',(event)=>{
+    if(event.key==='Enter' || event.key===' '){
+      event.preventDefault();
+      openModalFromCollection(trigger.dataset.image || 'aa.jpg.jpeg');
+    }
+  });
+});
+document.querySelectorAll('.coll-card').forEach((card)=>{
+  const img = card.querySelector('img');
+  if(!img) return;
+  card.addEventListener('click',(event)=>{
+    if(event.target.closest('a')) return;
+    openModalFromCollection(card.dataset.image || img.getAttribute('src'));
+  });
+  img.addEventListener('keydown',(event)=>{
+    if(event.key==='Enter' || event.key===' '){
+      event.preventDefault();
+      openModalFromCollection(card.dataset.image || img.getAttribute('src'));
+    }
+  });
+  img.setAttribute('tabindex','0');
+  img.setAttribute('role','button');
+  img.setAttribute('aria-label','Open collection image preview');
+});
+document.querySelectorAll('.insta-cell').forEach((cell)=>{
+  const img = cell.querySelector('img');
+  if(!img) return;
+  cell.addEventListener('click',(event)=>{
+    if(event.target.closest('a')) return;
+    openModalFromCollection(cell.dataset.image || img.getAttribute('src'));
+  });
+  img.addEventListener('keydown',(event)=>{
+    if(event.key==='Enter' || event.key===' '){
+      event.preventDefault();
+      openModalFromCollection(cell.dataset.image || img.getAttribute('src'));
+    }
+  });
+  img.setAttribute('tabindex','0');
+  img.setAttribute('role','button');
+  img.setAttribute('aria-label','Open image preview');
+});
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
 /* Mobile menu */
